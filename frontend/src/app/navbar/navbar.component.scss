@@ -1,13 +1,13 @@
 .navbar {
-  height: 100px;
+  height: 150px;
   background: gray;
   //box-shadow: 0 0 1px 0 rgba(61, 119, 180, 0.12), 0 0.25rem 12px 0 rgba(91, 139, 199, 0.24);
-  border-bottom: 1px solid gray;
+  border-bottom: 20px solid pink;
   //position: fixed;
   top: 0;
   //z-index: 2;
   width: 100%;
-  font-size: 15px;
+  //font-size: 15px;
   color: white;
   @media (min-width: 992px) {
     padding-left: 50px;

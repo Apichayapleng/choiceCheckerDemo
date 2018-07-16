@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
+  items = [
+    'EN', 'TH', 'JP', 'CN'
+  ];
+
   constructor() { }
 
   ngOnInit() {

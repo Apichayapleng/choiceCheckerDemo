@@ -9,6 +9,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {AngularFontAwesomeModule} from 'angular-font-awesome';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import {FormsModule} from '@angular/forms';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {FormsModule} from '@angular/forms';
     NgbModule,
     AngularFontAwesomeModule,
     CarouselModule.forRoot(),
-    FormsModule
+    FormsModule,
+    NgSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
