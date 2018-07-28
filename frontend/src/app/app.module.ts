@@ -1,5 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
 
 import {AppComponent} from './app.component';
 import {HomeComponent} from './home/home.component';
@@ -10,6 +11,12 @@ import {AngularFontAwesomeModule} from 'angular-font-awesome';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import {FormsModule} from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { AppRoutingModule } from './/app-routing.module';
+// import { routing } from './app.routing';
+
+// const appRoutes: Routes = [
+//   { path: 'home', component: HomeComponent},
+// ]
 
 @NgModule({
   declarations: [
@@ -24,9 +31,13 @@ import { NgSelectModule } from '@ng-select/ng-select';
     AngularFontAwesomeModule,
     CarouselModule.forRoot(),
     FormsModule,
-    NgSelectModule
+    NgSelectModule,
+    AppRoutingModule,
+    // RouterModule.forRoot(appRoutes),
+    // routing,
   ],
   providers: [],
+  entryComponents: [AppComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {
