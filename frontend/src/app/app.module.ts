@@ -14,9 +14,9 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { AppRoutingModule } from './/app-routing.module';
 // import { routing } from './app.routing';
 
-// const appRoutes: Routes = [
-//   { path: 'home', component: HomeComponent},
-// ]
+const appRoutes: Routes = [
+  { path: 'home', component: HomeComponent},
+]
 
 @NgModule({
   declarations: [
@@ -33,11 +33,14 @@ import { AppRoutingModule } from './/app-routing.module';
     FormsModule,
     NgSelectModule,
     AppRoutingModule,
-    // RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true }
+    ),
     // routing,
   ],
-  providers: [],
-  entryComponents: [AppComponent],
+  // providers: [],
+  // entryComponents: [AppComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {
