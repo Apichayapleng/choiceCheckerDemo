@@ -1,31 +1,10 @@
 .main-container {
-    
 
-    // @media (max-width: 2560px) {
-    //     // padding-left: 20px;
-    //     // padding-right: 20px;
-    //     width: 1600px;
-    //     margin:  auto;
-    //   }
+      margin: 0 auto; 
+      overflow: hidden;
 
-      // @media (max-width: 1440px) {
-      //   // padding-left: 50px;
-      //   // padding-right: 50px;
-      //   width: 95%;
-      //   margin:  auto;
-      // }
-
-      // @media (max-width: 1280px) {
-      //   // padding-left: 50px;
-      //   // padding-right: 50px;
-      //   width: 95%;
-      //   margin:  auto;
-      // }
-
-      // @media (min-width: 1024px) {
-      //   // padding-left: 50px;
-      //   // padding-right: 50px;
-      //   // width: 95%;
-      //   margin:  auto;
-      // }
+      @media (min-width: 1024px) {
+        width: 95%;
+        margin:  auto;
+      }
 }
