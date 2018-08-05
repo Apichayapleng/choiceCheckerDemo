@@ -15,7 +15,8 @@ import { AppRoutingModule } from './/app-routing.module';
 // import { routing } from './app.routing';
 
 const appRoutes: Routes = [
-  { path: 'home', component: HomeComponent},
+  { path: '',   redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
 ]
 
 @NgModule({
