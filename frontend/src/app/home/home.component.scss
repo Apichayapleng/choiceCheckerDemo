@@ -24,14 +24,17 @@
   // border: 2px white solid;
   border: 0;
   background-color: #F06F7F;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .card {
   border: 0;
 }
 
-.card-text {
-  font-size: 10px;
+.card-text-small {
+  font-size: 0.8vw;
+  text-align: center;
 }
 
 .text-on-img-bg {
