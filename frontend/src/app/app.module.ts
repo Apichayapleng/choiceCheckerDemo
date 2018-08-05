@@ -41,7 +41,7 @@ const appRoutes: Routes = [
     // routing,
   ],
   // providers: [],
-  // entryComponents: [AppComponent],
+  entryComponents: [AppComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {
