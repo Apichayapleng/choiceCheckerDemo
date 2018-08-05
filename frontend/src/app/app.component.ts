@@ -5,9 +5,11 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   template: `
+  <div class="main-container">
     <app-navbar></app-navbar>
     <router-outlet></router-outlet>
     <app-footer></app-footer>
+  </div>
   `,
 })
 export class AppComponent {
