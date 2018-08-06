@@ -1,11 +1,14 @@
 .main-container {
 
       margin: 0 auto; 
-      overflow: hidden;
+      // overflow: hidden;
 
       @media (min-width: 1024px) {
         display: flexbox;
-        width: 1200px;
-        margin:  auto;
+        // position: relative;
+        // width: 100%;
+        max-width: 1200px;
+        justify-content: space-between;
+        margin: 0 auto;
       }
 }
