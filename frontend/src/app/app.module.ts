@@ -12,11 +12,13 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 import {FormsModule} from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { AppRoutingModule } from './/app-routing.module';
+import { ProductComponent } from './product/product.component';
 // import { routing } from './app.routing';
 
 const appRoutes: Routes = [
   { path: '',   redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
+  { path: 'product', component: ProductComponent },
 ]
 
 @NgModule({
@@ -24,7 +26,8 @@ const appRoutes: Routes = [
     AppComponent,
     HomeComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
