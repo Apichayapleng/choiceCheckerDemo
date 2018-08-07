@@ -1,5 +1,25 @@
-.v-line {
-    height: 60%;
-    border-left: 6px solid pink;
+.v-line-center {
+    height: 420px;
+    border-right: 4px solid pink;
     align-items: center;
+    position: absolute;
+    vertical-align: middle;
+    left: 50%;
+    margin-top: 50px;
 }
+
+.product-name{
+    font-size: 50px;
+}
+
+@media (max-width: 1024px) {
+    .v-line-center{
+    height: 350px;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .product-name{
+        font-size: 40px;
+    }
+  }
