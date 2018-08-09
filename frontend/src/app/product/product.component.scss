@@ -23,7 +23,7 @@
         font-size: 40px;
     }
   }
-  }
+  
 .dark-bg {
     background-color: lightgray;
 }
@@ -37,4 +37,16 @@
     background-color: pink;
     color: white
 }
-}
+
+.line-text {
+    width: 100%; 
+    text-align: center; 
+    border-bottom: 1px solid #F06F7F; 
+    line-height: 0.1em;
+    margin: 10px 0 20px; 
+ } 
+ 
+h2 span { 
+     background:#fff; 
+     padding:0 10px; 
+ }
