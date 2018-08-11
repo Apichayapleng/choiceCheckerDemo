@@ -13,7 +13,11 @@ import {FormsModule} from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { AppRoutingModule } from './/app-routing.module';
 import { ProductComponent } from './product/product.component';
-// import { routing } from './app.routing';
+
+import { ChartModule } from 'angular2-chartjs';
+// import {AccordionModule} from 'primeng/accordion';
+// import {MenuItem} from 'primeng/api';     
+// import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 const appRoutes: Routes = [
   { path: '',   redirectTo: '/home', pathMatch: 'full' },
@@ -41,7 +45,9 @@ const appRoutes: Routes = [
       appRoutes,
       { enableTracing: true }
     ),
-    // routing,
+    ChartModule,
+    // AccordionModule,
+    // BrowserAnimationsModule,
   ],
   // providers: [],
   entryComponents: [AppComponent],

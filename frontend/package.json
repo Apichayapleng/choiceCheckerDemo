@@ -11,7 +11,7 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^6.0.3",
+    "@angular/animations": "^6.1.2",
     "@angular/common": "^6.0.3",
     "@angular/compiler": "^6.0.3",
     "@angular/core": "^6.0.3",
@@ -23,7 +23,9 @@
     "@ng-bootstrap/ng-bootstrap": "^2.2.0",
     "@ng-select/ng-select": "^2.3.3",
     "angular-bootstrap-md": "^6.2.1",
+    "angular-chart-donut": "^0.1.0",
     "angular-font-awesome": "^3.1.2",
+    "angular2-chartjs": "^0.5.1",
     "bootstrap": "^4.0.0-beta",
     "core-js": "^2.5.4",
     "flag-icon-css": "^3.0.0",
@@ -32,6 +34,8 @@
     "ngx-bootstrap": "^3.0.1",
     "nodemon": "^1.18.2",
     "popper.js": "^1.14.3",
+    "primeicons": "^1.0.0-beta.10",
+    "primeng": "^6.1.0",
     "rxjs": "^6.0.0",
     "zone.js": "^0.8.26"
   },
