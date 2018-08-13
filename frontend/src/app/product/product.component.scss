@@ -68,3 +68,28 @@ h2 span {
 .color-pink {
     color: #F06F7F;
 }
+
+.nav {
+    // height: 150px;
+    // background: #656667;
+    // top: 0;
+    // width: 100%;
+    color: black;
+    // @media (min-width: 992px) {
+    //   padding-left: 30px;
+    //   padding-right: 30px;
+    // }
+    // @media (max-width: 991px) {
+    //   display: none;
+    // }
+    // .row {
+    //   width: 100%;
+    // }
+    .nav-link {
+      &:hover{color: gray;}
+      color: black;
+    }
+    .active {
+        border-bottom: 1px solid pink;
+    }
+  }
