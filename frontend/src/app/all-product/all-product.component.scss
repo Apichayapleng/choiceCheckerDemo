@@ -3,7 +3,7 @@
     color: white
 }
 
-.sidenav {
+.sidenav-menu {
     background-color: lightgray;
     a {
         color: black;
@@ -15,4 +15,7 @@
     text-align: center;
     background-color: pink;
     color: white;
+    h6 {
+        margin-bottom: 0;
+    }
 }
