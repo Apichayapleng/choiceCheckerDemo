@@ -13,9 +13,22 @@
 .sidenav-header 
 {
     text-align: center;
-    background-color: pink;
+    background-color: #F06F7F;
     color: white;
+    padding: 10px;
     h6 {
         margin-bottom: 0;
     }
+}
+
+.card-product:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card-text-small {
+    font-size: 0.8vw;
+  }
+
+.sidenav-item:hover{
+    color: #F06F7F;
 }
