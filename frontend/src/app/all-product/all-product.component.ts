@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AllProductComponent implements OnInit {
 
+  currentPage = 1;
+
   constructor() { }
 
   ngOnInit() {
