@@ -31,6 +31,10 @@
 
 .sidenav-item:hover{
     color: #F06F7F;
+    a:hover:active{
+        color: #F06F7F;
+        text-decoration: none;
+    }
 }
 
 .pagination {
