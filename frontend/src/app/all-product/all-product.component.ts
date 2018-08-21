@@ -14,4 +14,7 @@ export class AllProductComponent implements OnInit {
   ngOnInit() {
   }
 
+  // toggleHeart() {
+  //   this.
+  // }
 }
