@@ -1,16 +1,16 @@
-import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import {AppComponent} from './app.component';
-import {HomeComponent} from './home/home.component';
-import {NavbarComponent} from './navbar/navbar.component';
-import {FooterComponent} from './footer/footer.component';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import {AngularFontAwesomeModule} from 'angular-font-awesome';
-import { CarouselModule } from 'ngx-bootstrap/carousel';
-import {FormsModule} from '@angular/forms';
+import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
+import { NgbModule, NgbPaginationModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './/app-routing.module';
 import { ProductComponent } from './product/product.component';
 
@@ -21,7 +21,7 @@ import { AllProductComponent } from './all-product/all-product.component';
 // import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 const appRoutes: Routes = [
-  { path: '',   redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'product', component: AllProductComponent },
   { path: 'subproduct', component: ProductComponent },
@@ -38,7 +38,9 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
-    NgbModule,
+    NgbModule.forRoot(),
+    NgbPaginationModule, 
+    NgbAlertModule,
     AngularFontAwesomeModule,
     CarouselModule.forRoot(),
     FormsModule,

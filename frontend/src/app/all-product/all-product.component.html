@@ -97,7 +97,7 @@
         </a>
       </div>
     </div>
-    <ul class="pagination">
+    <!-- <ul class="pagination">
       <li>
         <a href="#">1</a>
       </li>
@@ -113,6 +113,9 @@
       <li>
         <a href="#">5</a>
       </li>
-    </ul>
+    </ul> -->
+    <div class="pagination">
+      <ngb-pagination [collectionSize]="40" [pageSize]="40" [(page)]="currentPage"></ngb-pagination>
+    </div>
   </div>
 </div>
