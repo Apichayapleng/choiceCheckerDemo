@@ -31,16 +31,10 @@
 
 .sidenav-item:hover{
     color: #F06F7F;
-    a:hover:active{
+    a:hover{
         color: #F06F7F;
         text-decoration: none;
     }
-}
-
-.pagination {
-    padding-top: 10px;
-    display: flex;
-    justify-content: center;
 }
 
 .discount{
@@ -66,3 +60,29 @@
     background-color:#E7496C;
     border: none
   }
+
+  .pagination {
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.pagination-style {
+    // background-color: #F06F7F;
+}
+
+.color-pink {
+    color: #F06F7F;
+}
+
+.bg-gradient-left {
+    background-color: #F06F7F;
+    // background-image: radial-gradient(white 5%, white 10%, #F06F7F 15%, #E7496C 60%); 
+    background-image: linear-gradient(to left, white , #F06F7F);
+}
+
+.bg-gradient-right {
+    background-color: #F06F7F;
+    // background-image: radial-gradient(white 5%, white 10%, #F06F7F 15%, #E7496C 60%); 
+    background-image: linear-gradient(to right, white , #F06F7F);
+}

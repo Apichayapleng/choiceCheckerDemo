@@ -1,8 +1,8 @@
 <div class="row">
-  <div class="col-7" style="text-align: right">
+  <div class="col-7 bg-gradient-left" style="text-align: right">
     <img src="../assets/img/lip-pack.png" style="display: block; width: 20%;">
   </div>
-  <div class="col-4">
+  <div class="col-4 bg-gradient-right">
     <h2>text text</h2>
     <p>blah blah blah</p>
     <button class="btn-pink">SHOP NOW</button>
@@ -17,16 +17,17 @@
       </div>
       <ul class="sidenav-menu">
         <li class="sidenav-item">
-          <a class="sidenav-link" routerLink="/home" routerLinkActive="active">Skincare</a>
+          <!-- <a class="sidenav-link" routerLink="/home" routerLinkActive="active">Skincare</a> -->
+          <a class="sidenav-link" routerLinkActive="active">Skincare</a>
         </li>
         <li class="sidenav-item">
-          <a class="sidenav-link" routerLink="/home" routerLinkActive="active">Perfume</a>
+          <a class="sidenav-link" routerLinkActive="active">Perfume</a>
         </li>
         <li class="sidenav-item">
-          <a class="sidenav-link" routerLink="/home" routerLinkActive="active">Make up</a>
+          <a class="sidenav-link" routerLinkActive="active">Make up</a>
         </li>
         <li class="sidenav-item">
-          <a class="sidenav-link" routerLink="/home" routerLinkActive="Body">Skincare</a>
+          <a class="sidenav-link" routerLinkActive="Body">Skincare</a>
         </li>
       </ul>
     </div>
@@ -36,16 +37,16 @@
       </div>
       <ul class="sidenav-menu">
         <li class="sidenav-item">
-          <a class="sidenav-link" routerLink="/home" routerLinkActive="active">ALL</a>
+          <a class="sidenav-link" routerLinkActive="active">ALL</a>
         </li>
         <li class="sidenav-item">
-          <a class="sidenav-link" routerLink="/home" routerLinkActive="active">BRAND1</a>
+          <a class="sidenav-link" routerLinkActive="active">BRAND1</a>
         </li>
         <li class="sidenav-item">
-          <a class="sidenav-link" routerLink="/home" routerLinkActive="active">BRAND2</a>
+          <a class="sidenav-link" routerLinkActive="active">BRAND2</a>
         </li>
         <li class="sidenav-item">
-          <a class="sidenav-link" routerLink="/home" routerLinkActive="Body">BRAND3</a>
+          <a class="sidenav-link" routerLinkActive="Body">BRAND3</a>
         </li>
       </ul>
     </div>
@@ -60,6 +61,14 @@
           <div class="card-body" style="background-color: white">
             <!-- <h5 class="card-title">Card title</h5> -->
             <p class="card-text-small">Golden Rose Matte lipstick crayon 3.5g #10 </p>
+            <div class="row">
+                <i class="fa fa-circle color-pink "></i>
+                <i class="fa fa-circle color-pink "></i>
+                <i class="fa fa-circle color-pink "></i>
+                <i class="fa fa-circle-thin color-pink"></i>
+                <i class="fa fa-circle-thin color-pink"></i>
+                <p style="color: black; padding-left: 10px">3.5 / 5.0</p>
+              </div>
             <b>฿159</b>
             <p class="discount">- 20%</p><br>
             <del>฿199</del>
@@ -115,7 +124,7 @@
       </li>
     </ul> -->
     <div class="pagination">
-      <ngb-pagination [collectionSize]="40" [pageSize]="40" [(page)]="currentPage"></ngb-pagination>
+      <ngb-pagination class="pagination-style" [collectionSize]="70" [pageSize]="40" [(page)]="currentPage"></ngb-pagination>
     </div>
   </div>
 </div>
