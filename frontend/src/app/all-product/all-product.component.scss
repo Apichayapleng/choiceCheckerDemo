@@ -1,3 +1,8 @@
+.set-padding  {
+    padding-left: 15px;
+    padding-right: 15px; 
+}
+
 .btn-pink {
     background-color: #F06F7F;
     color: white
@@ -116,3 +121,8 @@
     // background-image: radial-gradient(white 5%, white 10%, #F06F7F 15%, #E7496C 60%); 
     background-image: linear-gradient(to right, white , #F06F7F);
 }
+
+// .page-item.active .page-link{
+//     background-color: #F06F7F !important;
+//     border-color: #F06F7F !important;
+// }
