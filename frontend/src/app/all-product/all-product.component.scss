@@ -81,8 +81,9 @@
   }
 
   .card-body{
-      padding-left: 0;
-      padding-right: 0;
+      padding-left: 8px;
+      padding-right: 8px;
+
     //   a {
     //       color: black;
     //   }
@@ -92,18 +93,14 @@
   }
 
 
-.fav{
-      display: none;
-}
+// .fav{
+//   display: none;
+// }
 
 .pagination {
     padding-top: 10px;
     display: flex;
     justify-content: center;
-}
-
-.pagination-style {
-    // background-color: #F06F7F;
 }
 
 .color-pink {
@@ -121,8 +118,3 @@
     // background-image: radial-gradient(white 5%, white 10%, #F06F7F 15%, #E7496C 60%); 
     background-image: linear-gradient(to right, white , #F06F7F);
 }
-
-// .page-item.active .page-link{
-//     background-color: #F06F7F !important;
-//     border-color: #F06F7F !important;
-// }

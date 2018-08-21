@@ -52,34 +52,39 @@
     </div>
   </div>
   <!-- product -->
-  <div class="col-9">
+  <div class="col-9" style="padding-top: 10px">
     <div class="row card-deck">
       <div class="card card-product">
-        <a class="nav-link" routerLink="/subproduct" routerLinkActive="active">
-          <i class="fa fa-heart-o fav" style="float: right; color: #F06F7F"></i>
+        <!-- <div *ngIf=""> -->
+        <i class="fa fa-heart-o" style="float: right; color: #F06F7F"></i>
+        <!-- </div> -->
+        <a routerLink="/subproduct" routerLinkActive="active">
+          <!-- <i class="fa fa-heart-o fav" style="float: right; color: #F06F7F"></i> -->
           <img src="../assets/img/lip-product.jpg" alt="first slide" style="display: block; width: 100%;">
-          <div class="card-body" style="background-color: white">
-            <!-- <h5 class="card-title">Card title</h5> -->
-            <p class="card-text-small">Golden Rose Matte lipstick crayon 3.5g #10 </p>
-            <div class="row">
-              <i class="fa fa-circle color-pink "></i>
-              <i class="fa fa-circle color-pink "></i>
-              <i class="fa fa-circle color-pink "></i>
-              <i class="fa fa-circle-thin color-pink"></i>
-              <i class="fa fa-circle-thin color-pink"></i>
-              <p style="color: black; padding-left: 10px">3.5 / 5.0</p>
-            </div>
-            <b>฿159</b>
-            <p class="discount">- 20%</p>
-            <br>
-            <del class="card-text-small">฿199</del>
-            <!-- <i class="fa fa-shopping-cart"></i> -->
-            <button type="button" class="btn btn-primary btn-circle btn-cart">
-              <i class="fa fa-shopping-cart"></i>
-            </button>
-            <!-- <span class="glyphicon glyphicon-shopping-cart"></span> -->
-          </div>
         </a>
+        <div class="card-body" style="background-color: white">
+          <!-- <h5 class="card-title">Card title</h5> -->
+          <a routerLink="/subproduct" routerLinkActive="active">
+            <p class="card-text-small">Golden Rose Matte lipstick crayon 3.5g #10 </p>
+          </a>
+          <div class="row" style="padding-left: 13px">
+            <i class="fa fa-circle color-pink "></i>
+            <i class="fa fa-circle color-pink "></i>
+            <i class="fa fa-circle color-pink "></i>
+            <i class="fa fa-circle-thin color-pink"></i>
+            <i class="fa fa-circle-thin color-pink"></i>
+            <p style="color: black; padding-left: 10px">3.5 / 5.0</p>
+          </div>
+          <b>฿159</b>
+          <p class="discount">- 20%</p>
+          <br>
+          <del class="card-text-small">฿199</del>
+          <!-- <i class="fa fa-shopping-cart"></i> -->
+          <button type="button" class="btn btn-primary btn-circle btn-cart">
+            <i class="fa fa-shopping-cart"></i>
+          </button>
+          <!-- <span class="glyphicon glyphicon-shopping-cart"></span> -->
+        </div>
       </div>
       <div class="card card-product">
         <a class="nav-link" routerLink="/subproduct" routerLinkActive="active">
@@ -127,7 +132,7 @@
             </li>
           </ul> -->
     <div class="pagination">
-      <ngb-pagination class="pagination-style" [collectionSize]="70" [pageSize]="40" [(page)]="currentPage"></ngb-pagination>
+      <ngb-pagination [collectionSize]="70" [pageSize]="40" [(page)]="currentPage"></ngb-pagination>
     </div>
   </div>
 </div>
