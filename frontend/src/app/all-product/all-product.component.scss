@@ -12,6 +12,7 @@
     background-color: #E54F9B;
     color: white;
     padding: 5px 50px 5px 50px;
+    cursor: pointer;
 }
 
 
@@ -47,6 +48,9 @@
     .fav{
         display: block;
     }
+    .card-text-small{
+        color: #F06F7F;
+    }
 }
 
 .card-text-small {
@@ -56,9 +60,10 @@
 
 .sidenav-item:hover{
     color: #F06F7F;
-    a:hover{
+    a{
         color: #F06F7F;
         text-decoration: none;
+        cursor: pointer;
     }
 }
 
@@ -85,6 +90,7 @@
     float: right; 
     background-color:#E7496C;
     border: none;
+    cursor: pointer;
   }
 
   .card-body{
