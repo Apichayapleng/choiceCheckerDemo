@@ -16,6 +16,10 @@ import { ProductComponent } from './product/product.component';
 
 import { ChartModule } from 'angular2-chartjs';
 import { AllProductComponent } from './all-product/all-product.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
+
+
 // import {AccordionModule} from 'primeng/accordion';
 // import {MenuItem} from 'primeng/api';     
 // import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -25,6 +29,9 @@ const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'product', component: AllProductComponent },
   { path: 'subproduct', component: ProductComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'contact', component: ContactComponent },
+
 ]
 
 @NgModule({
@@ -34,7 +41,9 @@ const appRoutes: Routes = [
     NavbarComponent,
     FooterComponent,
     ProductComponent,
-    AllProductComponent
+    AllProductComponent,
+    AboutComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
