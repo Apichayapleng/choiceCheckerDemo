@@ -113,7 +113,7 @@
 .pagination {
     padding-top: 10px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
 }
 
 .color-pink {
@@ -131,4 +131,12 @@
     background-color: #F06F7F;
     // background-image: radial-gradient(white 5%, white 10%, #F06F7F 15%, #E7496C 60%); 
     background-image: linear-gradient(to right, white , #F06F7F);
+}
+
+.pink-plus {
+    border-radius: 5px;
+    background: #F06F7F;
+    color: white;
+    width: 18px;
+    height: 18px; 
 }
