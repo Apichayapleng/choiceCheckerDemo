@@ -1,0 +1,71 @@
+.review-card {
+  padding: 30px 60px;
+  background: rgb(211,211,211);
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  .review-header {
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #656667;
+    color: #2c2c2c;
+  }
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    i {
+      font-size: 24px;
+    }
+    .btn, btn:hover, btn:active {
+      background: transparent;
+      border: 0;
+    }
+    .btn:focus {
+      box-shadow: none;
+    }
+    .like-container {
+      display: flex;
+      align-items: center;
+      .btn-like {
+        color: #E7496C;
+        &:hover, &:active {
+          color: #bd3e5a;
+        }
+      }
+    }
+  }
+}
+.comment-container {
+  padding: 30px 60px;
+  margin-bottom: 30px;
+  .comment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .btn {
+      i {
+        font-size: 20px;
+      }
+    }
+  }
+  .comment-form {
+    border: 1px solid rgb(211,211,211);
+    padding: 30px;
+    border-radius: 8px;
+    .btn {
+      border: 1px solid #E7496C;
+      color: #E7496C;
+      &:hover, &:active {
+        background: #E7496C;
+        color: white;
+      }
+      &:disabled:hover {
+        background: transparent;
+        color: #E7496C;
+      }
+    }
+  }
+}
+
+

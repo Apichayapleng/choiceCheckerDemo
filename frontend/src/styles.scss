@@ -9,3 +9,35 @@
     {
         .container-fluid{width:1000px}
     }
+
+.btn-primary {
+  background: #E7496C;
+  border-color: #E7496C;
+  cursor: pointer;
+  &:hover, &:active {
+    background: #bd3e5a;
+    border-color: #bd3e5a;
+  }
+  &:disabled {
+    background-color: #dc7289;
+    border-color: #dc7289;
+    &:hover, &:active {
+      background: #dc7289;
+      border-color: #dc7289;
+    }
+  }
+}
+
+.btn-icon {
+  font-size: 18px;
+  i {
+    font-size: 24px;
+  }
+  &.btn, &.btn:hover, &.btn:active {
+    background: transparent;
+    border: 0;
+  }
+  &.btn:focus {
+    box-shadow: none;
+  }
+}
