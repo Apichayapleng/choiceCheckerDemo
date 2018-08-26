@@ -1,0 +1,31 @@
+<div class="container pt-3 pb-3">
+  <h2>Form</h2>
+  <hr class="line-pink">
+  <form [formGroup]="form">
+    <div class="row">
+      <div class="form-group col-md-4 col-sm-12">
+        <label>Topic</label>
+        <input type="text" class="form-control" formControlName="topic">
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-md-4 col-sm-12">
+        <label>Thumbnail</label>
+        <img *ngIf="form?.value?.thumbnail" class="thumbnail" [src]="form?.value?.thumbnail">
+        <input type="file" class="form-control-file" (change)="onFileChange($event)">
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-12">
+        <label>Body</label>
+        <quill-editor [modules]="modules" [style]="{height: '500px'}" (onContentChanged)="onChange($event)"></quill-editor>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <button type="button" class="btn btn-default mr-2" style="width: 150px;" (click)="onCancel()">Cancel</button>
+        <button type="button" class="btn btn-primary" style="width: 150px;" (click)="onSubmit()">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>

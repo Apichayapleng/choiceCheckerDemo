@@ -1,0 +1,41 @@
+<div>
+  <div class="review-card">
+    <h2 class="review-header">{{review?.topic}}</h2>
+    <div [innerHTML]="bypassSecurity(review?.body)"></div>
+    <div>
+      <div class="footer-container">
+        <div class="like-container">
+          <button class="btn btn-like" (click)="onLike()">
+            <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+          </button>
+          <span>{{review?.like}}</span>
+        </div>
+        <delete-button (onDelete)="onDelete()" ></delete-button>
+      </div>
+    </div>
+  </div>
+  <div class="comment-container">
+    <div class="row" *ngFor="let comment of review?.comments; let i = index">
+      <div class="col-12">
+        <hr class="line-pink" *ngIf="i !== 0">
+        <div class="comment-header">
+          <b>{{comment?.name}}</b>
+          <delete-button style="font-size: 14px !important;" (onDelete)="onDeleteComment(comment?.id)" ></delete-button>
+        </div>
+        <p>{{comment?.body}}</p>
+      </div>
+    </div>
+    <form class="comment-form" [formGroup]="form">
+      <p>LEAVE A COMMENT</p>
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Name" formControlName="name" />
+      </div>
+      <div class="form-group">
+        <textarea class="form-control" placeholder="Comment" rows="3" formControlName="body"></textarea>
+      </div>
+      <button class="btn" [disabled]="!form.valid" (click)="onAddComment()">Submit</button>
+    </form>
+  </div>
+</div>
+
+
