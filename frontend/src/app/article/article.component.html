@@ -3,56 +3,55 @@
     <img src="../assets/img/lip-pack.png" style="display: block; width: 50%;float:right">
   </div>
   <div class="col-5 bg-gradient-right">
-    <div class="align-middle">
-      <h2>text text</h2>
-      <p>blah blah blah</p>
-      <button class="btn-pink-2">SHOP NOW</button>
-      <!-- </div> -->
-    </div>
+    <!-- <div class="align-middle">
+        <h2>text text</h2>
+        <p>blah blah blah</p>
+        <button class="btn-pink-2">SHOP NOW</button>
+      </div> -->
   </div>
 </div>
 <div class="row">
   <!-- nav -->
-  <div class="col-3">
-    <div class="container sidenav" style="padding-top: 10px; padding-left:0;">
-      <div class="sidenav-header ">
-        <h6>CATTEGORY</h6>
-      </div>
-      <ul class="sidenav-menu">
-        <li class="sidenav-item">
-          <!-- <a class="sidenav-link" routerLink="/home" routerLinkActive="active">Skincare</a> -->
-          <a class="sidenav-link" routerLinkActive="active">Skincare</a>
-        </li>
-        <li class="sidenav-item">
-          <a class="sidenav-link" routerLinkActive="active">Perfume</a>
-        </li>
-        <li class="sidenav-item">
-          <a class="sidenav-link" routerLinkActive="active">Make up</a>
-        </li>
-        <li class="sidenav-item">
-          <a class="sidenav-link" routerLinkActive="Body">Skincare</a>
-        </li>
-      </ul>
-    </div>
-    <div class="container sidenav" style="padding-left:0;">
-      <div class="sidenav-header ">
-        <h6>BRAND</h6>
-      </div>
-      <ul class="sidenav-menu">
-        <li class="sidenav-item">
-          <a class="sidenav-link" routerLinkActive="active">ALL</a>
-        </li>
-        <li class="sidenav-item">
-          <a class="sidenav-link" routerLinkActive="active">BRAND1</a>
-        </li>
-        <li class="sidenav-item">
-          <a class="sidenav-link" routerLinkActive="active">BRAND2</a>
-        </li>
-        <li class="sidenav-item">
-          <a class="sidenav-link" routerLinkActive="Body">BRAND3</a>
-        </li>
-      </ul>
-    </div>
+  <div class="col-3 bg-pink">
+    <h1>REVIEW</h1>
+    <!-- <div class="container sidenav" style="padding-top: 10px; padding-left:0;">
+        <div class="sidenav-header ">
+          <h6>CATTEGORY</h6>
+        </div>
+        <ul class="sidenav-menu">
+          <li class="sidenav-item">
+            <a class="sidenav-link" routerLinkActive="active">Skincare</a>
+          </li>
+          <li class="sidenav-item">
+            <a class="sidenav-link" routerLinkActive="active">Perfume</a>
+          </li>
+          <li class="sidenav-item">
+            <a class="sidenav-link" routerLinkActive="active">Make up</a>
+          </li>
+          <li class="sidenav-item">
+            <a class="sidenav-link" routerLinkActive="Body">Skincare</a>
+          </li>
+        </ul>
+      </div> -->
+    <!-- <div class="container sidenav" style="padding-left:0;">
+        <div class="sidenav-header ">
+          <h6>BRAND</h6>
+        </div>
+        <ul class="sidenav-menu">
+          <li class="sidenav-item">
+            <a class="sidenav-link" routerLinkActive="active">ALL</a>
+          </li>
+          <li class="sidenav-item">
+            <a class="sidenav-link" routerLinkActive="active">BRAND1</a>
+          </li>
+          <li class="sidenav-item">
+            <a class="sidenav-link" routerLinkActive="active">BRAND2</a>
+          </li>
+          <li class="sidenav-item">
+            <a class="sidenav-link" routerLinkActive="Body">BRAND3</a>
+          </li>
+        </ul>
+      </div> -->
   </div>
   <!-- product -->
   <div class="col-9" style="padding-top: 10px">
@@ -178,14 +177,14 @@
         </div>
       </div>
     </div>
-    <!-- <div class="row"> -->
-    <!-- <div class="col-2">
-          <i class="fa fa-plus pink-plus text-center"></i>
-      </div> -->
-    <div class="pagination">
-      <ngb-pagination [collectionSize]="70" [pageSize]="40" [(page)]="currentPage"></ngb-pagination>
+    <div class="row">
+      <div class="col-2">
+        <i class="fa fa-plus pink-plus text-center"></i>
+      </div>
+      <div class="col-10 pagination">
+        <ngb-pagination [collectionSize]="70" [pageSize]="40" [(page)]="currentPage"></ngb-pagination>
+      </div>
     </div>
-    <!-- </div> -->
   </div>
 </div>
 <!-- </div> -->

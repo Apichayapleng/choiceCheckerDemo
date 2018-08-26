@@ -23,6 +23,7 @@ import { ContactComponent } from './contact/contact.component';
 import { ReviewPageComponent } from './review/review.component';
 import { ReviewFormPageComponent } from './review-form/review-form.component';
 import { DeleteButtonComponent } from './review/components/delete-button/delete-button.component';
+import { ArticleComponent } from './article/article.component';
 
 
 // import {AccordionModule} from 'primeng/accordion';
@@ -35,6 +36,7 @@ const appRoutes: Routes = [
   { path: 'product', component: AllProductComponent },
   { path: 'subproduct', component: ProductComponent },
   { path: 'about', component: AboutComponent },
+  { path: 'article', component: ArticleComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'review/:id', component: ReviewPageComponent },
   { path: 'form/review', component: ReviewFormPageComponent },
@@ -54,6 +56,7 @@ const appRoutes: Routes = [
     ReviewFormPageComponent,
     DeleteButtonComponent,
     ValidateModalComponent,
+    ArticleComponent,
   ],
   imports: [
     BrowserModule,
