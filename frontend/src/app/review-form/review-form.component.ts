@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ValidateModalComponent } from '../shared/validate-modal/validate-modal.component';
 
 @Component({
   selector: 'app-review',
@@ -21,7 +23,11 @@ export class ReviewFormPageComponent implements OnInit {
   form: FormGroup;
   formErrors: any;
   modules = {};
-  constructor(private formBuilder: FormBuilder, private router: Router,) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private modalService: NgbModal
+  ) {
     this.modules = {
       toolbar: [
         ['bold', 'italic', 'underline', 'strike'],
@@ -49,12 +55,14 @@ export class ReviewFormPageComponent implements OnInit {
   initForm() {
     this.formErrors = {
       id: {},
+      type: {},
       topic: {},
       thumbnail: {},
       body: {},
     };
     this.form = this.formBuilder.group({
       id: [''],
+      type: ['community', Validators.required],
       topic: ['', Validators.required],
       thumbnail: ['', Validators.required],
       body: ['', Validators.required],
@@ -65,7 +73,6 @@ export class ReviewFormPageComponent implements OnInit {
   }
 
   onChange(event) {
-    console.log(event)
     this.form.controls.body.patchValue(event.html);
   }
 
@@ -80,9 +87,21 @@ export class ReviewFormPageComponent implements OnInit {
 
   onSubmit() {
     // api create review
-    console.log(this.form.value);
-    const id = 1
-    this.router.navigate(['/review', id]);
+    const form = this.form.value;
+    if (form.type === 'admin') {
+      this.modalService.open(ValidateModalComponent)
+        .result.then((result) => {
+        if (result) {
+          console.log('api create review for admin: ' + form)
+          const id = 1
+          this.router.navigate(['/review', id]);
+        }
+      });
+    } else {
+      console.log('api create review for community: ' + form)
+      const id = 1
+      this.router.navigate(['/review', id]);
+    }
   }
 
   private getBase64(file) {

@@ -14,6 +14,7 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './/app-routing.module';
 import { ProductComponent } from './product/product.component';
+import { ValidateModalComponent } from './shared/validate-modal/validate-modal.component';
 
 import { ChartModule } from 'angular2-chartjs';
 import { AllProductComponent } from './all-product/all-product.component';
@@ -36,7 +37,7 @@ const appRoutes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'review/:id', component: ReviewPageComponent },
-  { path: 'review/form', component: ReviewFormPageComponent },
+  { path: 'form/review', component: ReviewFormPageComponent },
 ]
 
 @NgModule({
@@ -51,7 +52,8 @@ const appRoutes: Routes = [
     ContactComponent,
     ReviewPageComponent,
     ReviewFormPageComponent,
-    DeleteButtonComponent
+    DeleteButtonComponent,
+    ValidateModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -74,7 +76,10 @@ const appRoutes: Routes = [
     // BrowserAnimationsModule,
   ],
   // providers: [],
-  entryComponents: [AppComponent],
+  entryComponents: [
+    AppComponent,
+    ValidateModalComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
