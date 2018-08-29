@@ -24,6 +24,7 @@ import { ReviewPageComponent } from './review/review.component';
 import { ReviewFormPageComponent } from './review-form/review-form.component';
 import { DeleteButtonComponent } from './review/components/delete-button/delete-button.component';
 import { ArticleComponent } from './article/article.component';
+// import { AgmCoreModule } from '@agm/core';
 
 
 // import {AccordionModule} from 'primeng/accordion';
@@ -77,6 +78,9 @@ const appRoutes: Routes = [
     ChartModule,
     // AccordionModule,
     // BrowserAnimationsModule,
+    // AgmCoreModule.forRoot({
+    //   apiKey: 'YOUR_KEY'
+    // }),
   ],
   // providers: [],
   entryComponents: [

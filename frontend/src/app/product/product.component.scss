@@ -40,6 +40,13 @@
     color: white
 }
 
+.big-btn-pink {
+    width: 100%;
+    height: auto;
+    background-color: #F06F7F;
+    color: white
+}
+
 .line-text {
     width: 100%; 
     text-align: center; 
@@ -96,4 +103,11 @@ h2 span {
 
   .tab-space {
       padding-right: 2px;
+  }
+
+  .set-vertical-center {
+    display: block;
+    margin-bottom: auto;
+    margin-top: auto;
+    
   }
