@@ -29,7 +29,12 @@ import { ArticleComponent } from './article/article.component';
 
 // import {AccordionModule} from 'primeng/accordion';
 // import {MenuItem} from 'primeng/api';
-// import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatDialogModule} from '@angular/material';
+import {FormEmailComponent} from './form-email/form-email.component';
+import {SkintypeQuestionComponent} from './skintype-question/skintype-question.component';
+import {SkintypeQuestionDetailComponent} from './skintype-question-detail/skintype-question-detail.component';
+import {TenyearQuestionComponent} from './tenyear-question/tenyear-question.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -58,6 +63,10 @@ const appRoutes: Routes = [
     DeleteButtonComponent,
     ValidateModalComponent,
     ArticleComponent,
+    FormEmailComponent,
+    SkintypeQuestionComponent,
+    SkintypeQuestionDetailComponent,
+    TenyearQuestionComponent
   ],
   imports: [
     BrowserModule,
@@ -77,7 +86,8 @@ const appRoutes: Routes = [
     ),
     ChartModule,
     // AccordionModule,
-    // BrowserAnimationsModule,
+    BrowserAnimationsModule,
+    MatDialogModule
     // AgmCoreModule.forRoot({
     //   apiKey: 'YOUR_KEY'
     // }),
@@ -85,7 +95,11 @@ const appRoutes: Routes = [
   // providers: [],
   entryComponents: [
     AppComponent,
-    ValidateModalComponent
+    ValidateModalComponent,
+    FormEmailComponent,
+    SkintypeQuestionComponent,
+    SkintypeQuestionDetailComponent,
+    TenyearQuestionComponent
   ],
   bootstrap: [AppComponent]
 })

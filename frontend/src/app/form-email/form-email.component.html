@@ -1,0 +1,141 @@
+<h2 mat-dialog-title>มีปัญหาปรึกษานึกถึงเรา ChoiceChecker</h2>
+<h4>** จำเป็นต้องกรอก</h4>
+<mat-dialog-content>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="fullname">1. ชื่อ-นามสกุล **</label>
+      <input type="text" id="fullname" [(ngModel)]="fullname" name="fullname" required>
+    </div>
+    <div class="form-group">
+      <label for="gender">2. เพศ</label>
+      <input type="radio" id="gender" name="gender" value="male" [(ngModel)]="gender">ชาย
+      <input type="radio" id="gender" name="gender" value="female"[(ngModel)]="gender">หญิง
+    </div>
+    <div class="form-group">
+      <label for="email">3. อีเมล **</label>
+      <input type="text" id="email" [(ngModel)]="email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="tel">4. เบอร์โทรศัพท์</label>
+      <input type="text" id="tel" [(ngModel)]="phoneNo" name="tel">
+    </div>
+    <div class="form-group">
+      <label for="job">5. อาชีพของคุณ</label><br>
+      <input type="radio" id="job" name="job" [(ngModel)]="job" value="ข้าราชการหรือรัฐวิสาหกิจ">ข้าราชการหรือรัฐวิสาหกิจ  <br>
+      <input type="radio" id="job" name="job" [(ngModel)]="job" value="พนักงานบริษัทเอกชน">พนักงานบริษัทเอกชน <br>
+      <input type="radio" id="job" name="job" [(ngModel)]="job" value="รับจ้าง">รับจ้าง <br>
+      <input type="radio" id="job" name="job" [(ngModel)]="job" value="นักเรียน นักศึกษา">นักเรียน นักศึกษา <br>
+      <input type="radio" id="job" name="job" [(ngModel)]="job" value="พ่อแม่หรือแม่บ้าน">พ่อแม่หรือแม่บ้าน <br>
+      <input type="radio" id="job" name="job" [(ngModel)]="job" value="ธุรกิจส่วนตัว">ธุรกิจส่วนตัว <br>
+      <input type="radio" id="job" name="job" [(ngModel)]="job" value="อื่นๆ">อื่นๆ
+    </div>
+    <div class="form-group">
+      <label for="age">6. อายุ **</label><br>
+      <input type="radio" id="age" name="age" [(ngModel)]="age" value="น้อยกว่า 20 ปี" required>น้อยกว่า 20 ปี
+      <input type="radio" id="age" name="age" [(ngModel)]="age" value="21-30 ปี">21-30 ปี 
+      <input type="radio" id="age" name="age" [(ngModel)]="age" value="31-40 ปี">31-40 ปี 
+      <input type="radio" id="age" name="age" [(ngModel)]="age" value="41-50 ปี">41-50 ปี 
+      <input type="radio" id="age" name="age" [(ngModel)]="age" value="51-60 ปี">51-60 ปี 
+      <input type="radio" id="age" name="age" [(ngModel)]="age" value="มากกว่า 60 ปี">มากกว่า 60 ปี
+    </div>
+    <div class="form-group">
+      <label for="story">7. ChoiceChecker อยากทราบรายละเอียดเพิ่มเติมเล็กน้อย</label>
+      <p>กรุณาเล่าเรื่องราวของคุณ ตัวอย่างเช่น ฉันเริ่มเป็นสิวตอนอายุ 14 ขวบ เลยไปอ่านรีวิวในพันทิปเขาแนะนำให้ใช้ดิฟฟารีนทาทิ้งไว้ทั้งคืน ช่วงนั้นสิวหาย แต่พอผ่านไปสักพักสิวก็กลับมาเป็นอีก แต่ครั้งนี้ไม่เหมือนเดิมเวลาจะใช้สกินแคร์อะไรก็ต้องระวังขึ้นเพราะหน้าแพ้ง่ายมาก</p>
+      <textarea id="story" name="story" [(ngModel)]="story" rows="4" cols="150" placeholder="กรุณากรอกเรื่องราวของคุณ (เท่าที่จำได้)"></textarea>
+    </div>
+    <div class="form-group">
+      <input type="radio" id="type" [(ngModel)]="type" name="type" value="face" required>ต้องการปรึกษาปัญหาเกี่ยวกับใบหน้า
+      <input type="radio" id="type" [(ngModel)]="type" name="type" value="body">ต้องการปรึกษาปัญหาเกี่ยวกับรูปร่าง
+    </div>
+    <div *ngIf="type == 'face'">
+      <div class="form-group">
+        <label for="skincare">8. ปัจจุบันคุณใช้สกินแคร์ เครื่องสำอางหรืออาหารเสริมอะไรบ้าง**</label><br>
+        <input type="radio" id="checkSkincare" [(ngModel)]="checkSkincare" name="checkSkincare" value="true" required>มี<br>
+        <textarea id="skincare" [(ngModel)]="skincare" name="skincare" rows="4" cols="50" placeholder="กรุณากรอกรายละเอียด"></textarea><br>
+        <input type="radio" id="checkSkincare" [(ngModel)]="checkSkincare" name="checkSkincare" value="false">ไม่มี
+      </div>
+      <div class="form-group">
+        <label for="usedSkincare">9. อดีตคุณเคยใช้สกินแคร์ เครื่องสำอางหรืออาหารเสริมอะไรบ้าง (ตอบเท่าที่จำได้)</label><br>
+        <input type="radio" id="checkUseSkincare" [(ngModel)]="checkUseSkincare" name="checkUseSkincare" value="true" required>มี<br>
+        <textarea id="usedSkincare" [(ngModel)]="usedSkincare" name="usedSkincare" rows="4" cols="50" placeholder="กรุณากรอกรายละเอียด"></textarea><br>
+        <input type="radio" id="checkUseSkincare" [(ngModel)]="checkUseSkincare" name="checkUseSkincare" value="false">ไม่มี
+      </div>
+      <div class="form-group">
+        <label for="useAcne">10. คุณเคยทานยาหรือฉีดยาเพื่อรักษาสิวหรือไม่**</label><br>
+        <input type="radio" id="useAcne" name="useAcne" [(ngModel)]="useAcne" value="ใช่" required>ใช่<br>
+        <input type="radio" id="useAcne" name="useAcne" [(ngModel)]="useAcne" value="ไม่ใช่">ไม่ใช่<br>
+        <input type="radio" id="useAcne" name="useAcne" [(ngModel)]="useAcne" value="จำไม่ได้">จำไม่ได้<br>
+      </div>
+      <div class="form-group">
+        <label for="useBlemish">11. คุณเคยทานยาหรือฉีดยาเพื่อรักษาฝ้าหรือไม่**</label><br>
+        <input type="radio" id="useBlemish" name="useBlemish" [(ngModel)]="useBlemish" value="ใช่" required>ใช่<br>
+        <input type="radio" id="useBlemish" name="useBlemish" [(ngModel)]="useBlemish" value="ไม่ใช่">ไม่ใช่<br>
+        <input type="radio" id="useBlemish" name="useBlemish" [(ngModel)]="useBlemish" value="จำไม่ได้">จำไม่ได้<br>
+      </div>
+      <div class="form-group">
+        <label for="useBrightSkin">12. คุณเคยทานยาหรือฉีดยาเพื่อให้ผิวขาว กระจ่างใสหรือไม่**</label><br>
+        <input type="radio" id="useBrightSkin" name="useBrightSkin" [(ngModel)]="useBrightSkin" value="ใช่" required>ใช่<br>
+        <input type="radio" id="useBrightSkin" name="useBrightSkin" [(ngModel)]="useBrightSkin" value="ไม่ใช่">ไม่ใช่<br>
+        <input type="radio" id="useBrightSkin" name="useBrightSkin" [(ngModel)]="useBrightSkin" value="จำไม่ได้">จำไม่ได้<br>
+      </div>
+      <div class="form-group">
+        <label for="level">13. ผิวหน้าของคุณแพ้ระดับไหน**</label><br>
+        <input type="radio" id="level" name="level" [(ngModel)]="level" value="0" required>0
+        <input type="radio" id="level" name="level" [(ngModel)]="level" value="1">1
+        <input type="radio" id="level" name="level" [(ngModel)]="level" value="2">2
+        <input type="radio" id="level" name="level" [(ngModel)]="level" value="3">3
+        <input type="radio" id="level" name="level" [(ngModel)]="level" value="4">4
+        <input type="radio" id="level" name="level" [(ngModel)]="level" value="5">5
+        <br>
+        <p>ระดับที่ 0 ไม่รู้ ไม่เคยสังเกตตัวเองมาก่อนเลย</p>
+        <p>ระดับที่ 1 ไม่เคยแพ้อะไรมาก่อนเลย สามารถ<b>ใช้ผลิตภัณฑ์ได้ทุกชนิด</b>ไม่ว่าจะเป็นผลิตภัณฑ์ล้างหน้า โทนเนอร์ ครีมบำรุงต่างๆ กันแดดเป็นต้น<b>โดยไม่มีปัญหา</b>เรื่องคัน มีผื่นแดง ระคายเคือง</p>
+        <p>ระดับที่ 2 <b>ทุก</b>ยี่ห้อของผลิตภัณฑ์ล้างหน้าที่ใช้มา<b>ไม่เคย</b>มีปัญหาเรื่องคัน มีผื่นแดง ระคายเคือง ส่วนผลิตภัณฑ์บำรุงผิวชนิดอื่นๆ เช่นโทนเนอร์ ครีม เอสเซน กันแดดเป็นต้น มี<b>บางยี่ห้อ</b>bที่ใช้ไม่ได้เพราะทำให้เกิดปัญหาเหล่านั้น</p>
+        <p>ระดับที่ 3 <b>ใช้</b>ผลิตภัณฑ์ล้างหน้า<b>ได้แค่บางยี่ห้อ</b> ส่วนผลิตภัณฑ์ชนิดอื่นๆเช่นโทนเนอร์ ครีม เอสเซน กันแดดเป็นต้น <b>ก็ต้องระมัดระวังเป็นพิเศษ</b> เพราะทำให้เกิดปัญหาเรื่องเรื่องคัน มีผื่นแดง ระคายเคืองได้ง่าย</p>
+        <p>ระดับที่ 4  <b>ใช้</b>ผลิตภัณฑ์ล้างหน้า<b>ได้แค่บางยี่ห้อ</b> ส่วนผลิตภัณฑ์ชนิดอื่นๆเช่นโทนเนอร์ ครีม เอสเซน กันแดดเป็นต้น<b>ใช้ไม่ได้เลย</b> เพราะเกิดปัญหาเรื่องเรื่องคัน มีผื่นแดง ระคายเคืองตลอด</p>
+        <p>ระดับที่ 5  ไม่สามารถใช้อะไรได้เลย ใช้อะไรก็เกิดปัญหาเรื่องเรื่องคัน มีผื่นแดง ระคายเคืองตลอด</p>
+      </div>
+    </div>
+    <div *ngIf="type == 'body'">
+      <div class="form-control">
+        <label>8. น้ำหนัก และส่วนสูงของคุณ</label><br>
+        <label for="weight">น้ำหนัก (กิโลกรัม)</label><input type="text" id="weight" name="weight" [(ngModel)]="weight" required><br>
+        <label for="height">ส่วนสูง (เซนติเมตร)</label><input type="text" id="height" name="height" [(ngModel)]="height" required><br>
+      </div>
+      <div class="form-control">
+        <label>9. อาหารต่อไปนี้คุณชอบอะไรมากที่สุด จงเรียงลำดับ</label><br>
+        <ul>
+            <li (click)="onClickFood('ของหวาน')">ของหวาน เช่น เค้ก ชาเย็น บิงซู ข้าวเหนียวมะม่วง</li>
+            <li (click)="onClickFood('อาหารนอกบ้าน')">อาหารนอกบ้าน หรืออาหารสำเร็จรูปเช่น โจ๊กคัพ บะหมี่กึ่งสำเร็จรูป ข้าวกล่องร้านสะดวกซื้อ</li>
+            <li (click)="onClickFood('เครื่องดื่มแอลกอฮอล์')">เบียร์ วิสกี้ ไวน์</li>
+            <li (click)="onClickFood('ของทอด')">ของทอดเช่นกล้ายทอด เฟรนไฟซ์ ไก่ทอด ลูกชิ้นทอด</li>
+        </ul>
+        <p>คำตอบ <span *ngFor="let food of foods">{{food}} </span></p>
+      </div>
+      <div class="form-control">
+        <label for="dietaryFood">10. ปัจจุบันนี้คุณทานอาหารเสริมเพื่อดูแลรูปร่างอะไรอยู่</label><br>
+        <input type="radio" id="checkDietaryFood" [(ngModel)]="checkDietaryFood" name="checkDietaryFood" value="true">มี<br>
+        <textarea id="dietaryFood" [(ngModel)]="dietaryFood" name="dietaryFood" rows="4" cols="50" placeholder="กรุณากรอกรายละเอียด"></textarea><br>
+        <input type="radio" id="checkDietaryFood" [(ngModel)]="checkDietaryFood" name="checkDietaryFood" value="false">ไม่มี
+      </div>
+      <div class="form-control">
+        <label for="usedDietaryFood">11. อดีตคุณเคยทานอาหารเสริมเพื่อดูแลรูปร่างอะไรอยู่</label><br>
+        <input type="radio" id="checkUsedDietaryFood" [(ngModel)]="checkUsedDietaryFood" name="checkUsedDietaryFood" value="true">มี<br>
+        <textarea id="usedDietaryFood" [(ngModel)]="usedDietaryFood" name="tel" rows="4" cols="50" placeholder="กรุณากรอกรายละเอียด"></textarea><br>
+        <input type="radio" id="checkUsedDietaryFood" [(ngModel)]="checkUsedDietaryFood" name="checkUsedDietaryFood" value="false">ไม่มี
+      </div>
+      <div class="form-group">
+        <label for="dietDrug">12. คุณเคยทานยาลดความอ้วนไหม**</label><br>
+        <input type="radio" id="dietDrug" name="dietDrug" [(ngModel)]="dietDrug" value="ใช่" required>ใช่<br>
+        <input type="radio" id="dietDrug" name="dietDrug" [(ngModel)]="dietDrug" value="ไม่ใช่">ไม่ใช่<br>
+        <input type="radio" id="dietDrug" name="dietDrug" [(ngModel)]="dietDrug" value="จำไม่ได้">จำไม่ได้<br>
+      </div>
+      <div class="form-group">
+        <label for="drugAllergies">13. คุณเคยแพ้ยา อาหารเสริม หรือสกินแคร์อะไรบ้างไหม</label> 
+        <input type="radio" id="drugAllergies" name="drugAllergies" [(ngModel)]="drugAllergies" value="เคย" required>เคย
+        <input type="radio" id="drugAllergies" name="drugAllergies" [(ngModel)]="drugAllergies" value="ไม่เคย">ไม่เคย<br>
+        <textarea id="drugAllergiesDetail" [(ngModel)]="drugAllergiesDetail" name="drugAllergiesDetail" rows="4" cols="50" placeholder="ถ้าเคย อะไรบ้าง"></textarea><br>
+      </div>
+    </div>
+    <input type="submit" value="ส่งอีเมล">
+  </form>
+</mat-dialog-content>

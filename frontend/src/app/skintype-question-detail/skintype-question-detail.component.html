@@ -1,0 +1,53 @@
+<mat-dialog-content *ngIf="isResult == false">
+    <h3>{{question.name}}</h3>
+    <div>
+        <div *ngIf="question.yesId != null">
+            <button *ngIf="question.yesImage != null" class="btn yesImage-{{question.yesId}}" (click)="onClickQuestion(question.yesId)">
+                รูปใช่
+            </button>
+            <button *ngIf="question.yesImage == null" class="btn yesId-{{question.yesId}}" (click)="onClickQuestion(question.yesId)">
+                ใช่
+            </button>
+        </div>
+        <div *ngIf="question.yesResult != null">
+            <button class="btn yesResult-{{question.yesResult}}" (click)="onClickResult(question.yesResult)">
+                ใช่
+            </button>
+        </div>
+        <div *ngIf="question.noId != null">
+            <button *ngIf="question.noImage != null" class="btn noImage-{{question.noId}}" (click)="onClickQuestion(question.noId)">
+                รูปไม่
+            </button>
+            <button *ngIf="question.noImage == null" class="btn noId-{{question.noId}}" (click)="onClickQuestion(question.noId)">
+                ไม่
+            </button>
+        </div>
+        <div *ngIf="question.noResult != null">
+            <button class="btn noResult-{{question.noResult}}" (click)="onClickResult(question.noResult)">
+                ใช่
+            </button>
+        </div>
+    </div>
+</mat-dialog-content>
+<mat-dialog-content *ngIf="isResult == true">
+    <h2>ลักษณะผิวของคุณคือ {{yesNoResult.name}}</h2>
+    <h3>สิ่งสำคัญสำหรับการดูแลผิวของคุณคือ</h3>
+    <div *ngIf="yesNoResult.id == 1">
+        <p><b><u>รักษาความชุ่มชื้นให้กับผิว </u></b>เพราะเมื่ออายุเพิ่มขึ้น ผิวจะค่อยๆแห้ง ผิวแห้งเป็นสาเหตุของปัญหาผิวต่างๆ เช่นรูขุมขนกว้าง ริ้วรอย ฝ้า เป็นต้น  ดังนั้นคุณควรดูแลถนอมผิวตั้งแต่นี้เป็นต้นไป</p>
+    </div>
+    <div *ngIf="yesNoResult.id == 2">
+        <p><b><u>ไม่ทำให้หน้ามันขึ้น </u>ในขณะเดียวกัน<u>ก็ไม่ทำให้หน้าแห้ง และรักษาความชุ่มชื้นให้กับผิว</u></b> เพราะความมันบนใบหน้าที่มากเกินไปเป็นสาเหตุของสิว รอยสิว และรูขุมขนกว้าง ในขณะที่พยายามขจัดไขมันบนใบหน้า ก็อาจทำให้ผิวแห้ง  ซึ่งผิวแห้งเป็นสาเหตุของปัญหาผิวต่างๆ เช่นรูขุมขนกว้าง ริ้วรอย ฝ้า เป็นต้น</p>
+    </div>
+    <div *ngIf="yesNoResult.id == 3">
+        <p><b><u>ไม่ทำให้หน้ามันขึ้น </u>ในขณะเดียวกัน<u>ก็ไม่ทำให้หน้าแห้ง และรักษาความชุ่มชื้นให้กับผิว</u></b> เพราะความมันบนใบหน้าที่มากเกินไปเป็นสาเหตุของสิว รอยสิว และรูขุมขนกว้าง ในขณะที่พยายามขจัดไขมันบนใบหน้า ก็อาจทำให้ผิวแห้ง  ซึ่งผิวแห้งเป็นสาเหตุของปัญหาผิวต่างๆ เช่นรูขุมขนกว้าง ริ้วรอย ฝ้า เป็นต้น</p>
+    </div>
+    <div *ngIf="yesNoResult.id == 4">
+        <p><b><u>รักษาและให้ความชุ่มชื้นกับผิวมากๆ </u></b>เพราะผิวแห้งเป็นสาเหตุของปัญหาผิวต่างๆ เช่นรูขุมขนกว้าง ริ้วรอย ฝ้า เป็นต้น</p>
+    </div>
+    <div *ngIf="yesNoResult.id == 5">
+        <p>คุณควรใส่ใจ และระมัดระวังเป็นพิเศษควรเลือกใช้สกินแคร์ที่ <b><u>ไม่ทำให้ผิวแห้ง และ รักษาความชุ่มชื้นให้กับผิวของคุณ</u> นอกจากนั้นควรเลือกผลิตภัณฑ์ที่มีความปลอดภัยสูงปราศจากสารต่างๆ ที่อาจจะก่อให้เกิดการระคายเคือง</b> เช่นแอลกอฮอล์ สารกันบูดเป็นต้น (ลิ้งไปที่ผลิตภัณฑ์ที่เหมาะสมกับคุณ)</p>
+    </div>
+    <div>
+        <button (click)="onCloseDialog()">Close</button>
+    </div>
+</mat-dialog-content>
