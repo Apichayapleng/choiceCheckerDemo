@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {MatDialog} from '@angular/material';
+import {TenyearQuestionComponent} from '../tenyear-question/tenyear-question.component';
+import {SkintypeQuestionComponent} from '../skintype-question/skintype-question.component';
+import {FormEmailComponent} from '../form-email/form-email.component';
 
 @Component({
   selector: 'app-home',
@@ -25,9 +29,26 @@ export class HomeComponent implements OnInit {
   //   }
   // ];
 
-  constructor() { }
+  constructor(public matDialog: MatDialog) { }
 
   ngOnInit() {
   }
 
+  onClickTenYear(){
+    let dialogRef = this.matDialog.open(TenyearQuestionComponent, {
+      width: '600px'
+    });
+  }
+
+  onClickSkinType(){
+    let dialogRef = this.matDialog.open(SkintypeQuestionComponent, {
+      width: '600px'
+    });
+  }
+
+  onClickForm(){
+    let dialogRef = this.matDialog.open(FormEmailComponent, {
+      width: '600px'
+    });
+  }
 }
