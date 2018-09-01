@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-contact',
@@ -7,14 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
-  currentPage = 1;
+  // @ViewChild('gmap') gmapElement: any;
 
+  lat: number = 51.678418;
+  lng: number = 7.809007;
+  
   constructor() { }
 
   ngOnInit() {
   }
 
-  // toggleHeart() {
-  //   this.
-  // }
 }

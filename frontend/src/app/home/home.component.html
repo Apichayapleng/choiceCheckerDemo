@@ -19,7 +19,17 @@
     <div class="text-on-img-left" style="color: white">
       <h4>HEADER</h4>
       <p>is simply is simply</p>
-      <button class="btn-on-img-pink" type="button">
+      <button class="btn-on-img-pink" (click)="onClickTenYear()" type="button">
+        <i class="fa fa-angle-right" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+  <div class="col-md-3" style="padding-left: 0; padding-right: 0">
+    <img src="../assets/img/5.jpg" alt="first slide" style="display: block; width: 100%;">
+    <div class="text-on-img-left" style="color: white">
+      <h4>HEADER</h4>
+      <p>is simply is simply</p>
+      <button class="btn-on-img-pink" (click)="onClickSkinType()" type="button">
         <i class="fa fa-angle-right" aria-hidden="true"></i>
       </button>
     </div>
@@ -39,17 +49,7 @@
     <div class="text-on-img-left" style="color: white">
       <h4>HEADER</h4>
       <p>is simply is simply</p>
-      <button class="btn-on-img-pink" type="button">
-        <i class="fa fa-angle-right" aria-hidden="true"></i>
-      </button>
-    </div>
-  </div>
-  <div class="col-md-3" style="padding-left: 0; padding-right: 0">
-    <img src="../assets/img/5.jpg" alt="first slide" style="display: block; width: 100%;">
-    <div class="text-on-img-left" style="color: white">
-      <h4>HEADER</h4>
-      <p>is simply is simply</p>
-      <button class="btn-on-img-pink" type="button">
+      <button class="btn-on-img-pink" (click)="onClickForm()" type="button">
         <i class="fa fa-angle-right" aria-hidden="true"></i>
       </button>
     </div>
@@ -105,24 +105,32 @@
     <slide>
       <div class="card-deck">
         <div class="card">
-          <img src="../assets/img/5.jpg" alt="first slide" style="display: block; width: 100%;">
+          <a routerLink="/review/:id">
+            <img src="../assets/img/5.jpg" alt="first slide" style="display: block; width: 100%;">
+          </a>
           <div class="card-body" style="background-color: white">
             <!-- <h5 class="card-title">Card title</h5> -->
-            <p class="card-text-small">This is a longer card with supporting text below as a natural lead-in to additional </p>
+            <p class="card-text-small">This is a longer card with supporting text below as a natural lead-in to additional
+            </p>
           </div>
         </div>
         <div class="card">
-          <img src="../assets/img/5.jpg" alt="first slide" style="display: block; width: 100%;">
+          <a routerLink="/review/:id">
+            <img src="../assets/img/5.jpg" alt="first slide" style="display: block; width: 100%;">
+          </a>
           <div class="card-body" style="background-color: white">
             <!-- <h5 class="card-title">Card title</h5> -->
             <p class="card-text-small">This card has supporting text below as a natural lead-in to additional content.</p>
           </div>
         </div>
         <div class="card">
-          <img src="../assets/img/5.jpg" alt="first slide" style="display: block; width: 100%;">
+          <a routerLink="/review/:id">
+            <img src="../assets/img/5.jpg" alt="first slide" style="display: block; width: 100%;">
+          </a>
           <div class="card-body" style="background-color: white">
             <!-- <h5 class="card-title">Card title</h5> -->
-            <p class="card-text-small">This is a wider card with supporting text below as a natural lead-in to additional </p>
+            <p class="card-text-small">This is a wider card with supporting text below as a natural lead-in to additional
+            </p>
           </div>
         </div>
       </div>
@@ -130,21 +138,29 @@
     <slide>
       <div class="card-deck">
         <div class="card">
-          <img src="../assets/img/9.jpg" alt="first slide" style="display: block; width: 100%;">
+          <a routerLink="/review/:id">
+            <img src="../assets/img/9.jpg" alt="first slide" style="display: block; width: 100%;">
+          </a>
           <div class="card-body" style="background-color: white">
             <p class="card-text-small">This is a longer card with supporting text below as a natural lead-in to additional</p>
           </div>
         </div>
         <div class="card">
-          <img src="../assets/img/9.jpg" alt="first slide" style="display: block; width: 100%;">
+          <a routerLink="/review/:id">
+            <img src="../assets/img/9.jpg" alt="first slide" style="display: block; width: 100%;">
+          </a>
           <div class="card-body" style="background-color: white">
             <p class="card-text-small">This card has supporting text below as a natural lead-in to additional content.</p>
           </div>
         </div>
         <div class="card">
-          <img src="../assets/img/9.jpg" alt="first slide" style="display: block; width: 100%;">
+          <a routerLink="/review/:id">
+            <img src="../assets/img/9.jpg" alt="first slide" style="display: block; width: 100%;">
+          </a>
           <div class="card-body" style="background-color: white">
-            <p class="card-text-small">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+            <p class="card-text-small">This is a wider card with supporting text below as a natural lead-in to additional
+              content.
+            </p>
           </div>
         </div>
       </div>
@@ -202,48 +218,48 @@
 </div>
 
 <div class="row" style="padding-top: 30px">
-    <div class="col-md-4">
-      <img src="../assets/img/5.jpg" alt="first slide" style="display: block; width: 100%;">
-      <div class="text-on-img text-center">
-        <hr style="border: 1px solid white">
-        <h4>NEW PRODUCTS</h4>
-        <hr style="border: 1px solid white">
-        <p>is simply is simply is simply is simply is simply is simply</p>
-        <button class="btn-on-img" type="button">CLICK</button>
-      </div>
+  <div class="col-md-4">
+    <img src="../assets/img/5.jpg" alt="first slide" style="display: block; width: 100%;">
+    <div class="text-on-img text-center">
+      <hr style="border: 1px solid white">
+      <h4>NEW PRODUCTS</h4>
+      <hr style="border: 1px solid white">
+      <p>is simply is simply is simply is simply is simply is simply</p>
+      <button class="btn-on-img" type="button">CLICK</button>
     </div>
-    <div class="col-md-8">
-      <div class="row">
-        <div class="col-md-4">
-          <div class="card" style="width: 13rem;">
-            <img src="../assets/img/2.jpg" alt="second slide" style="display: block; width: 120%;">
-            <div class="card-body">
-              <p class="card-text-small">Some quick example text to build
-              </p>
-            </div>
+  </div>
+  <div class="col-md-8">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card" style="width: 13rem;">
+          <img src="../assets/img/2.jpg" alt="second slide" style="display: block; width: 120%;">
+          <div class="card-body">
+            <p class="card-text-small">Some quick example text to build
+            </p>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="card" style="width: 13rem;">
-            <img src="../assets/img/2.jpg" alt="second slide" style="display: block; width: 120%;">
-            <div class="card-body">
-              <p class="card-text-small">Some quick example text to build
-              </p>
-            </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card" style="width: 13rem;">
+          <img src="../assets/img/2.jpg" alt="second slide" style="display: block; width: 120%;">
+          <div class="card-body">
+            <p class="card-text-small">Some quick example text to build
+            </p>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="card" style="width: 13rem;">
-            <img src="../assets/img/2.jpg" alt="second slide" style="display: block; width: 120%;">
-            <div class="card-body">
-              <p class="card-text-small">Some quick example text to build
-              </p>
-            </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card" style="width: 13rem;">
+          <img src="../assets/img/2.jpg" alt="second slide" style="display: block; width: 120%;">
+          <div class="card-body">
+            <p class="card-text-small">Some quick example text to build
+            </p>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
 
 <div class="row" style="padding-bottom: 10px">
   <div class="col-md-4">

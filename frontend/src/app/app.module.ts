@@ -24,12 +24,17 @@ import { ReviewPageComponent } from './review/review.component';
 import { ReviewFormPageComponent } from './review-form/review-form.component';
 import { DeleteButtonComponent } from './review/components/delete-button/delete-button.component';
 import { ArticleComponent } from './article/article.component';
-// import { AgmCoreModule } from '@agm/core';
+import { AgmCoreModule } from '@agm/core';
 
 
 // import {AccordionModule} from 'primeng/accordion';
 // import {MenuItem} from 'primeng/api';
-// import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatDialogModule} from '@angular/material';
+import {FormEmailComponent} from './form-email/form-email.component';
+import {SkintypeQuestionComponent} from './skintype-question/skintype-question.component';
+import {SkintypeQuestionDetailComponent} from './skintype-question-detail/skintype-question-detail.component';
+import {TenyearQuestionComponent} from './tenyear-question/tenyear-question.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -58,6 +63,10 @@ const appRoutes: Routes = [
     DeleteButtonComponent,
     ValidateModalComponent,
     ArticleComponent,
+    FormEmailComponent,
+    SkintypeQuestionComponent,
+    SkintypeQuestionDetailComponent,
+    TenyearQuestionComponent
   ],
   imports: [
     BrowserModule,
@@ -77,15 +86,20 @@ const appRoutes: Routes = [
     ),
     ChartModule,
     // AccordionModule,
-    // BrowserAnimationsModule,
-    // AgmCoreModule.forRoot({
-    //   apiKey: 'YOUR_KEY'
-    // }),
+    BrowserAnimationsModule,
+    MatDialogModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBwNGRf5eXUpzvi75ZZwYNzY8Ef74RS608'
+    }),
   ],
   // providers: [],
   entryComponents: [
     AppComponent,
-    ValidateModalComponent
+    ValidateModalComponent,
+    FormEmailComponent,
+    SkintypeQuestionComponent,
+    SkintypeQuestionDetailComponent,
+    TenyearQuestionComponent
   ],
   bootstrap: [AppComponent]
 })

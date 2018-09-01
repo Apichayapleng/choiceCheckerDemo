@@ -19,7 +19,7 @@
         <p style="color: #F06F7F; margin-left: 7px;"> Vote</p>
       </div>
 
-      <div class="row justitfy-content-center">
+      <!-- <div class="row justitfy-content-center">
         <ul class="nav">
           <li class="nav">
               <a class="nav-link" routerLink="tab1" routerLinkActive="active" name="tab1">SCORE</a>
@@ -31,7 +31,7 @@
               <a class="nav-link" routerLink="tab3" name="tab3">INFO</a>
           </li>
         </ul>
-      </div>
+      </div> -->
 
     
 
@@ -67,42 +67,108 @@
       </div> -->
 
       <div class="row">
-        <chart [type]="typeChart" [data]="dataChart" [options]="optionsChart"></chart>
-        <div class="row">
-          <div>
-            <p>Topic</p>
-            <div class="row">
-              <i class="fa fa-circle color-pink tab-space"></i>
-              <i class="fa fa-circle color-pink tab-space"></i>
-              <i class="fa fa-circle color-pink tab-space"></i>
-              <i class="fa fa-circle color-pink tab-space"></i>
-              <i class="fa fa-circle color-pink tab-space"></i>
-              <i class="fa fa-circle color-pink tab-space"></i>
-              <i class="fa fa-circle-thin color-pink tab-space"></i>
-              <i class="fa fa-circle-thin color-pink tab-space"></i>
-              <i class="fa fa-circle-thin color-pink tab-space"></i>
-              <i class="fa fa-circle-thin color-pink tab-space"></i>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="score-tab" data-toggle="tab" href="#score" role="tab" aria-controls="score" aria-selected="true">Score</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="procon-tab" data-toggle="tab" href="#procon" role="tab" aria-controls="procon" aria-selected="false">Pro
+              & Con</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="info-tab" data-toggle="tab" href="#info" role="tab" aria-controls="info" aria-selected="false">Info</a>
+          </li>
+        </ul>
+        <!-- <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
+          <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+          <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+        </div> -->
+
+        <!-- </div> -->
+
+        <div class="row tab-pane fade show active" id="score" role="tabpanel" aria-labelledby="score-tab">
+          <chart [type]="typeChart" [data]="dataChart" [options]="optionsChart"></chart>
+          <div class="row">
+            <div>
+              <p>Topic</p>
+              <div class="row">
+                <i class="fa fa-circle color-pink tab-space"></i>
+                <i class="fa fa-circle color-pink tab-space"></i>
+                <i class="fa fa-circle color-pink tab-space"></i>
+                <i class="fa fa-circle color-pink tab-space"></i>
+                <i class="fa fa-circle color-pink tab-space"></i>
+                <i class="fa fa-circle color-pink tab-space"></i>
+                <i class="fa fa-circle-thin color-pink tab-space"></i>
+                <i class="fa fa-circle-thin color-pink tab-space"></i>
+                <i class="fa fa-circle-thin color-pink tab-space"></i>
+                <i class="fa fa-circle-thin color-pink tab-space"></i>
+              </div>
+              <p>Topic</p>
+              <div class="row">
+                <i class="fa fa-circle color-pink tab-space"></i>
+                <i class="fa fa-circle color-pink tab-space"></i>
+                <i class="fa fa-circle color-pink tab-space"></i>
+                <i class="fa fa-circle color-pink tab-space"></i>
+                <i class="fa fa-circle color-pink tab-space"></i>
+                <i class="fa fa-circle color-pink tab-space"></i>
+                <i class="fa fa-circle-thin color-pink tab-space"></i>
+                <i class="fa fa-circle-thin color-pink tab-space"></i>
+                <i class="fa fa-circle-thin color-pink tab-space"></i>
+                <i class="fa fa-circle-thin color-pink tab-space"></i>
+              </div>
+              <p>Topic</p>
+              <div class="row">
+                <i class="fa fa-circle color-pink tab-space"></i>
+                <i class="fa fa-circle color-pink tab-space"></i>
+                <i class="fa fa-circle color-pink tab-space"></i>
+                <i class="fa fa-circle color-pink tab-space"></i>
+                <i class="fa fa-circle color-pink tab-space"></i>
+                <i class="fa fa-circle color-pink tab-space"></i>
+                <i class="fa fa-circle-thin color-pink tab-space"></i>
+                <i class="fa fa-circle-thin color-pink tab-space"></i>
+                <i class="fa fa-circle-thin color-pink tab-space"></i>
+                <i class="fa fa-circle-thin color-pink tab-space"></i>
+              </div>
+              <p>Topic</p>
+              <div class="row">
+                <i class="fa fa-circle color-pink tab-space"></i>
+                <i class="fa fa-circle color-pink tab-space"></i>
+                <i class="fa fa-circle color-pink tab-space"></i>
+                <i class="fa fa-circle color-pink tab-space"></i>
+                <i class="fa fa-circle color-pink tab-space"></i>
+                <i class="fa fa-circle color-pink tab-space"></i>
+                <i class="fa fa-circle-thin color-pink tab-space"></i>
+                <i class="fa fa-circle-thin color-pink tab-space"></i>
+                <i class="fa fa-circle-thin color-pink tab-space"></i>
+                <i class="fa fa-circle-thin color-pink tab-space"></i>
+              </div>
             </div>
           </div>
         </div>
+
       </div>
+
+
     </div>
   </div>
 </div>
 <div class="row jumbotron jumbotron-fluid text-center dark-bg">
-    <div class="col-1"></div>
+  <div class="col-1"></div>
   <div class="col-6" style="border: 8px solid black">
     <div class="row">
       <div class="col-6 set-vertical-center">
         <button class="big-btn-pink" routerLink="/review/:id">REVIEW</button>
       </div>
       <div class="col-6 set-vertical-center">
-        <p>blahblahblah blah blah blah blahblahblahblahblahblahblah blahblahblahblahblahblahblahblahb lahblahblahblahblahblahblahblahbl ahblahblahblahblahblahblah</p>
+        <p>blahblahblah blah blah blah blahblahblahblahblahblahblah blahblahblahblahblahblahblahblahb lahblahblahblahblahblahblahblahbl
+          ahblahblahblahblahblahblah
+        </p>
       </div>
     </div>
   </div>
   <div class="col-4">
-      <img src="../assets/img/lip.png">
+    <img src="../assets/img/lip.png">
   </div>
 </div>
 <div class="row align-items-center">
