@@ -3,6 +3,7 @@ import {MatDialog} from '@angular/material';
 import {TenyearQuestionComponent} from '../tenyear-question/tenyear-question.component';
 import {SkintypeQuestionComponent} from '../skintype-question/skintype-question.component';
 import {FormEmailComponent} from '../form-email/form-email.component';
+import {SkinProblemComponent} from '../skin-problem/skin-problem.component';
 
 @Component({
   selector: 'app-home',
@@ -48,6 +49,12 @@ export class HomeComponent implements OnInit {
 
   onClickForm(){
     let dialogRef = this.matDialog.open(FormEmailComponent, {
+      width: '600px'
+    });
+  }
+
+  onClickSkinProblem(){
+    let dialogRef = this.matDialog.open(SkinProblemComponent, {
       width: '600px'
     });
   }
