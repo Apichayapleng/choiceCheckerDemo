@@ -35,6 +35,7 @@ import {FormEmailComponent} from './form-email/form-email.component';
 import {SkintypeQuestionComponent} from './skintype-question/skintype-question.component';
 import {SkintypeQuestionDetailComponent} from './skintype-question-detail/skintype-question-detail.component';
 import {TenyearQuestionComponent} from './tenyear-question/tenyear-question.component';
+import { SkinProblemComponent } from './skin-problem/skin-problem.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -66,7 +67,8 @@ const appRoutes: Routes = [
     FormEmailComponent,
     SkintypeQuestionComponent,
     SkintypeQuestionDetailComponent,
-    TenyearQuestionComponent
+    TenyearQuestionComponent,
+    SkinProblemComponent
   ],
   imports: [
     BrowserModule,
@@ -99,7 +101,8 @@ const appRoutes: Routes = [
     FormEmailComponent,
     SkintypeQuestionComponent,
     SkintypeQuestionDetailComponent,
-    TenyearQuestionComponent
+    TenyearQuestionComponent,
+    SkinProblemComponent
   ],
   bootstrap: [AppComponent]
 })
