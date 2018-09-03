@@ -33,11 +33,19 @@
     color: white;
     padding: 10px;
     margin: 10px 0 30px 0;
+    border:none;
 }
 
 .btn-pink {
-    background-color: pink;
-    color: white
+    background-color:#F06F7F;
+    color: white;
+    padding: 10px 40px 10px 40px;
+    margin: 10px 0 30px 0;
+    border:none;
+    font-size: 2rem;
+    
+  
+
 }
 
 .big-btn-pink {
@@ -70,6 +78,7 @@ h2 span {
     border-radius: 4px;
     width: 100%;
     margin-bottom: 10px;
+    padding: 5px;
 }
 
 .color-pink {
@@ -93,13 +102,28 @@ h2 span {
     //   width: 100%;
     // }
     .nav-link {
-      &:hover{color: gray;}
+      &:hover{
+          color: gray;
+          border-bottom: 6px solid #F06F7F;
+        }
+      &:active{
+          border-bottom: 6px solid #F06F7F;
+        }
       color: black;
+      border-bottom: 1px solid gray;
     }
+  }
+
+  .fa-circle, .fa-circle-thin{
+      padding-right: 3px;
+  }
+
+
+
     .active {
         border-bottom: 1px solid pink;
     }
-  }
+  
 
   .tab-space {
       padding-right: 2px;
@@ -111,3 +135,4 @@ h2 span {
     margin-top: auto;
     
   }
+  
