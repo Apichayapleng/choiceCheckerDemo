@@ -1,5 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-skin-problem',
@@ -9,7 +10,7 @@ import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
 export class SkinProblemComponent implements OnInit {
 
   part: number = 1;
-
+  
   constructor(public dialogRef: MatDialogRef<SkinProblemComponent>, @Inject(MAT_DIALOG_DATA) public data: string) { }
 
   ngOnInit() {
@@ -17,5 +18,9 @@ export class SkinProblemComponent implements OnInit {
 
   onClickNext(){
     this.part += 1;
+  }
+
+  onFormSubmit(){
+
   }
 }
