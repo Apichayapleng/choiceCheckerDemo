@@ -1,93 +1,129 @@
 <h2 mat-dialog-title>ผิวหน้ามีปัญหา <b>ใช้อะไรดี?</b></h2>
-<mat-dialog-content>
-<form [formGroup]="skinForm" (ngSubmit)="onFormSubmit()" >
-  <div class="form-control" *ngIf="part == 1">
-    <div>
-      <label for="gender">1. เพศ</label>
-      <input type="radio" name="gender" formControlName="gender" value="male" required> ชาย
-      <input type="radio" name="gender" formControlName="gender" value="female" > หญิง
-    </div>
-    <div>
-      <label for="age">2. อายุ</label>
-      <input type="radio" name="age" formControlName="age" value="20" required>น้อยกว่า 20 ปี
-      <input type="radio" name="age" formControlName="age" value="2130">21 - 30 ปี
-      <input type="radio" name="age" formControlName="age" value="3140">31 - 40 ปี
-      <input type="radio" name="age" formControlName="age" value="4150">41 - 50 ปี
-      <input type="radio" name="age" formControlName="age" value="5160">51 - 60 ปี
-      <input type="radio" name="age" formControlName="age" value="60">มากกว่า 60 ปี
-    </div>
-    <div>
-      <label for="job">3. คุณทำอาชีพอะไร</label><br>
-      <input type="radio" name="job" formControlName="job" value="ข้าราชการหรือรัฐวิสาหกิจ" required>ข้าราชการหรือรัฐวิสาหกิจ  <br>
-      <input type="radio" name="job" formControlName="job" value="พนักงานบริษัทเอกชน">พนักงานบริษัทเอกชน <br>
-      <input type="radio" name="job" formControlName="job" value="รับจ้าง">รับจ้าง <br>
-      <input type="radio" name="job" formControlName="job" value="นักเรียน นักศึกษา">นักเรียน นักศึกษา <br>
-      <input type="radio" name="job" formControlName="job" value="พ่อแม่หรือแม่บ้าน">พ่อแม่หรือแม่บ้าน <br>
-      <input type="radio" name="job" formControlName="job" value="ธุรกิจส่วนตัว">ธุรกิจส่วนตัว <br>
-      <input type="radio" name="job" formControlName="job" value="อื่นๆ">อื่นๆ
-    </div>
-    <div>
-      <label for="skintype">4.สภาพผิวของคุณเป็นแบบไหน (สามารถทำแบบทดสอบได้ที่ <a>ผิวคุณเป็นแบบไหน</a>) </label><br>
-      <input type="radio" name="skintype" formControlName="skintype" value="ผิวมัน">ผิวมัน
-      <input type="radio" name="skintype" formControlName="skintype" value="ผิวผสม">ผิวผสม
-      <input type="radio" name="skintype" formControlName="skintype" value="ผิวปกติ">ผิวปกติ
-      <input type="radio" name="skintype" formControlName="skintype" value="ผิวแห้ง">ผิวแห้ง
-      <input type="radio" name="skintype" formControlName="skintype" value="ผิวแห้งภายใน">ผิวแห้งภายใน
-      <input type="radio" name="skintype" formControlName="skintype" value="ผิวแพ้ง่าย">ผิวแพ้ง่าย
-    </div>
-    <button class="btn" (click)="onClickNext()" >ถัดไป</button>
-  </div>
-  <div class="form-control" *ngIf="part == 2">
-    <div>
-      <label>5. ผิวหน้าของคุณมีปัญหาอะไรบ้าง (ตอบได้มากกว่า 1 ข้อ)</label><br>
-      <label>ปัญหาสิว</label>
-      <div></div>
+<mat-dialog-content >
+  <form [formGroup]="theForm" >
+    <div class="form-control"  *ngIf="part == 1">
       <div>
-        <input type="checkbox" name="pimpleCheckbox" fromControlName="pimple1">1. สิวอุดตัน (หัวขาว)  หรือหลายคนเรียกว่าสิวผด ลักษณะเป็นตุ่มเม็ดเล็กๆ กระจายอยู่บริเวณต่างๆของใบหน้าโดยเฉพาะหน้าผาก ระหว่างคิ้ว แก้ม <br>
-        <input type="checkbox" name="pimpleCheckbox" fromControlName="pimple2">2. สิวอุดตัน (หัวแดง) ลักษณะเป็นตุ่มแดงเหมือนยุงกัด กระจายอยู่บริเวณต่างๆของใบหน้าโดยเฉพาะหน้าผาก คาง แก้ม ขากรรไกร <br>
-        <input type="checkbox" name="pimpleCheckbox" fromControlName="pimple3">3. สิวอักเสบ (หัวเหลือง) ลักษณะเป็นตุ่มแดงอักเสบมีหนอง มักขึ้นบริเวณหน้าผาก คาง แก้ม <br>
-        <input type="checkbox" name="pimpleCheckbox" fromControlName="pimple4">4. รอยสิว ลักษณะเป็นร่องรอยหลงเหลือหลังจากเป็นสิว ลักษณะเป็นรอยแดง ม่วงๆ หรือดำๆ <br>
-        <input type="checkbox" name="pimpleCheckbox" fromControlName="pimple5">5. ไม่ใช่ทั้งหมดตามลักษณะข้างต้น <br>
+        <label for="gender">1. เพศ</label>
+        <input type="radio" name="gender" formControlName="gender" value="male" required> ชาย
+        <input type="radio" name="gender" formControlName="gender" value="female" > หญิง
       </div>
-    </div>
-    <div>
-      <br>
-      <label>ปัญหาริ้วรอย</label>
-      <div></div>
       <div>
-        <input type="checkbox" name="wrinkleCheckbox" fromControlName="wrinkle1">ริ้วรอยร่องตื้น พบบริเวณหน้าผาก หางตา ใต้ตา หรือร่องแก้ม ในช่วงอายุตั้งแต่ 25 ปีถึง 40 ปี <br>
-        <input type="checkbox" name="wrinkleCheckbox" fromControlName="wrinkle2">ริ้วรอยร่องลึก พบบริเวณหน้าผาก หางตา ใต้ตา หรือร่องแก้ม ในช่วงอายุตั้งแต่ 40 ปีขึ้นไป<br>
+        <label for="age">2. อายุ</label>
+        <input type="radio" name="age" formControlName="age" value="20" required>น้อยกว่า 20 ปี
+        <input type="radio" name="age" formControlName="age" value="2130">21 - 30 ปี
+        <input type="radio" name="age" formControlName="age" value="3140">31 - 40 ปี
+        <input type="radio" name="age" formControlName="age" value="4150">41 - 50 ปี
+        <input type="radio" name="age" formControlName="age" value="5160">51 - 60 ปี
+        <input type="radio" name="age" formControlName="age" value="60">มากกว่า 60 ปี
       </div>
-    </div>
-    <div>
-      <br>
-      <label>ปัญหาผิวหมองคล้ำ</label>
-      <div></div>
       <div>
-        <input type="checkbox" name="dullCheckbox" fromControlName="dull1">ลักษณะผิวดูหมองคล้ำ ไม่กระจ่างใส  พบในทุกช่วงวัย
+        <label for="job">3. คุณทำอาชีพอะไร</label><br>
+        <input type="radio" name="job" formControlName="job" value="0" required>ข้าราชการหรือรัฐวิสาหกิจ  <br>
+        <input type="radio" name="job" formControlName="job" value="1">พนักงานบริษัทเอกชน <br>
+        <input type="radio" name="job" formControlName="job" value="2">รับจ้าง <br>
+        <input type="radio" name="job" formControlName="job" value="3">นักเรียน นักศึกษา <br>
+        <input type="radio" name="job" formControlName="job" value="4">พ่อแม่หรือแม่บ้าน <br>
+        <input type="radio" name="job" formControlName="job" value="5">ธุรกิจส่วนตัว <br>
+        <input type="radio" name="job" formControlName="job" value="6">อื่นๆ
       </div>
-    </div>
-    <div>
-      <br>
-      <label>ปัญหารูขุมขน</label>
-      <div></div>
       <div>
-        <input type="checkbox" name="poreCheckbox" fromControlName="pore1">รูขุมขนอุดตัน ลักษณะไขมันอุดตันตามรูขุมขน หลายคนเรียกว่าสิวเสี้ยน โดยเฉพาะบริเวณจมูก ข้างแก้ม ใต้คาง  <br>    
-        <input type="checkbox" name="poreCheckbox" fromControlName="pore2">รูขุมขนกว้าง ลักษณะเห็นรูขุมขนชัดเจน โดยเฉพาะบริเวณจมูก แก้ม คาง<br>
+        <label for="skintype">4.สภาพผิวของคุณเป็นแบบไหน (สามารถทำแบบทดสอบได้ที่ <a>ผิวคุณเป็นแบบไหน</a>) </label><br>
+        <input type="radio" name="skintype" formControlName="skintype" value="0">ผิวมัน
+        <input type="radio" name="skintype" formControlName="skintype" value="1">ผิวผสม
+        <input type="radio" name="skintype" formControlName="skintype" value="2">ผิวปกติ
+        <input type="radio" name="skintype" formControlName="skintype" value="3">ผิวแห้ง
+        <input type="radio" name="skintype" formControlName="skintype" value="4">ผิวแห้งภายใน
+        <input type="radio" name="skintype" formControlName="skintype" value="5">ผิวแพ้ง่าย
       </div>
+      <button class="btn" (click)="onClickNext()" >ถัดไป</button>
     </div>
-    <div>
-      <br>
-      <label>ปัญหาฝ้า</label>
-      <div></div>
+    <div class="form-control" *ngIf="part == 2">
       <div>
-        <input type="checkbox" name="blemishCheckbox" fromControlName="blemish1">ฝ้าแดด      <br>
-        <input type="checkbox" name="blemishCheckbox" fromControlName="blemish2">ฝ้าผู้สูงอายุ<br>
-        <input type="checkbox" name="blemishCheckbox" fromControlName="blemish3">ฝ้าฮอร์โมน<br>
+        <label>5. ผิวหน้าของคุณมีปัญหาอะไรบ้าง (ตอบได้มากกว่า 1 ข้อ)</label><br>
+        <label>ปัญหาสิว</label>
+        <div></div>
+        <div>
+          <label formArrayName="pimples" *ngFor="let pimple of theForm.controls.pimples.controls; let i = index">
+            <input type="checkbox" [formControlName]="i">{{pimples[i].value}}
+          </label><br>
+          <!-- <input type="checkbox" name="pimpleCheckbox" formControlName="pimple1">1. สิวอุดตัน (หัวขาว)  หรือหลายคนเรียกว่าสิวผด ลักษณะเป็นตุ่มเม็ดเล็กๆ กระจายอยู่บริเวณต่างๆของใบหน้าโดยเฉพาะหน้าผาก ระหว่างคิ้ว แก้ม <br>
+          <input type="checkbox" name="pimpleCheckbox" formControlName="pimple2">2. สิวอุดตัน (หัวแดง) ลักษณะเป็นตุ่มแดงเหมือนยุงกัด กระจายอยู่บริเวณต่างๆของใบหน้าโดยเฉพาะหน้าผาก คาง แก้ม ขากรรไกร <br>
+          <input type="checkbox" name="pimpleCheckbox" formControlName="pimple3">3. สิวอักเสบ (หัวเหลือง) ลักษณะเป็นตุ่มแดงอักเสบมีหนอง มักขึ้นบริเวณหน้าผาก คาง แก้ม <br>
+          <input type="checkbox" name="pimpleCheckbox" formControlName="pimple4">4. รอยสิว ลักษณะเป็นร่องรอยหลงเหลือหลังจากเป็นสิว ลักษณะเป็นรอยแดง ม่วงๆ หรือดำๆ <br>
+          <input type="checkbox" name="pimpleCheckbox" formControlName="pimple5">5. ไม่ใช่ทั้งหมดตามลักษณะข้างต้น <br> -->
+        </div>
       </div>
-      
+      <div>
+        <br>
+        <label>ปัญหาริ้วรอย</label>
+        <div></div>
+        <div>
+          <label formArrayName="wrinkles" *ngFor="let wrinkle of theForm.controls.wrinkles.controls; let i = index">
+            <input type="checkbox" [formControlName]="i" >{{wrinkles[i].value}}<br>
+          </label>
+          <!-- <input type="checkbox" name="wrinkleCheckbox" formControlName="wrinkle1">ริ้วรอยร่องตื้น พบบริเวณหน้าผาก หางตา ใต้ตา หรือร่องแก้ม ในช่วงอายุตั้งแต่ 25 ปีถึง 40 ปี <br>
+          <input type="checkbox" name="wrinkleCheckbox" formControlName="wrinkle2">ริ้วรอยร่องลึก พบบริเวณหน้าผาก หางตา ใต้ตา หรือร่องแก้ม ในช่วงอายุตั้งแต่ 40 ปีขึ้นไป<br> -->
+        </div>
+      </div>
+      <div>
+        <br>
+        <label>ปัญหาผิวหมองคล้ำ</label>
+        <div></div>
+        <div>
+          <label formArrayName="dulls" *ngFor="let dull of theForm.controls.dulls.controls; let i = index">
+            <input type="checkbox" [formControlName]="i">{{dulls[i].value}}
+          </label>
+          <!-- <input type="checkbox" name="dullCheckbox" formControlName="dull1">ลักษณะผิวดูหมองคล้ำ ไม่กระจ่างใส  พบในทุกช่วงวัย -->
+        </div>
+      </div>
+      <div>
+        <br>
+        <label>ปัญหารูขุมขน</label>
+        <div></div>
+        <div>
+          <label formArrayName="pores" *ngFor="let pore of theForm.controls.pores.controls; let i = index">
+            <input type="checkbox" [formControlName]="i">{{pores[i].value}}
+          </label>
+          <!-- <input type="checkbox" name="poreCheckbox" formControlName="pore1">รูขุมขนอุดตัน ลักษณะไขมันอุดตันตามรูขุมขน หลายคนเรียกว่าสิวเสี้ยน โดยเฉพาะบริเวณจมูก ข้างแก้ม ใต้คาง  <br>    
+          <input type="checkbox" name="poreCheckbox" formControlName="pore2">รูขุมขนกว้าง ลักษณะเห็นรูขุมขนชัดเจน โดยเฉพาะบริเวณจมูก แก้ม คาง<br> -->
+        </div>
+      </div>
+      <div>
+        <br>
+        <label>ปัญหาฝ้า</label>
+        <div></div>
+        <div>
+          <label formArrayName="blemishes" *ngFor="let belmish of theForm.controls.blemishes.controls; let i = index">
+            <input type="checkbox" [formControlName]="i">{{blemishes[i].value}}
+          </label>
+          <!-- <input type="checkbox" name="blemishCheckbox" formControlName="blemish1">ฝ้าแดด      <br>
+          <input type="checkbox" name="blemishCheckbox" formControlName="blemish2">ฝ้าผู้สูงอายุ<br>
+          <input type="checkbox" name="blemishCheckbox" formControlName="blemish3">ฝ้าฮอร์โมน<br> -->
+        </div>
+        
+      </div>
+      <button class="btn" (click)="onClickNext()">ถัดไป</button>
     </div>
-    <button class="btn" (click)="onClickNext()" >ถัดไป</button>
-  </div>
-</form>
+    <div class="form-control" *ngIf="part == 3">
+      <div>
+        <label for="skinallergies">6. ผิวหน้าของคุณแพ้ระดับไหน</label><br>
+        <input type="radio" name="skinallergies" formControlName="skinallergies" value="0" required>0 
+        <input type="radio" name="skinallergies" formControlName="skinallergies" value="1">1 
+        <input type="radio" name="skinallergies" formControlName="skinallergies" value="2">2 
+        <input type="radio" name="skinallergies" formControlName="skinallergies" value="3">3 
+        <input type="radio" name="skinallergies" formControlName="skinallergies" value="4">4 
+        <input type="radio" name="skinallergies" formControlName="skinallergies" value="5">5 
+        <br>
+      </div>
+      <div>
+        <p>ระดับที่ 0 ไม่รู้ ไม่เคยสังเกตตัวเองมาก่อนเลย</p>
+        <p>ระดับที่ 1 ไม่เคยแพ้อะไรมาก่อนเลย สามารถ<b>ใช้ผลิตภัณฑ์ได้ทุกชนิด</b>ไม่ว่าจะเป็นผลิตภัณฑ์ล้างหน้า โทนเนอร์ ครีมบำรุงต่างๆ กันแดดเป็นต้น<b>โดยไม่มีปัญหา</b>เรื่องคัน มีผื่นแดง ระคายเคือง</p>
+        <p>ระดับที่ 2 ทุกยี่ห้อของผลิตภัณฑ์ล้างหน้าที่ใช้มา<b>ไม่เคย</b>มีปัญหาเรื่องคัน มีผื่นแดง ระคายเคือง ส่วนผลิตภัณฑ์บำรุงผิวชนิดอื่นๆเช่นโทนเนอร์ ครีม เอสเซน กันแดดเป็นต้น มี<b>บางยี่ห้อ</b>ที่ใช้ไม่ได้เพราะทำให้เกิดปัญหาเหล่านั้น</p>
+        <p>ระดับที่ 3 ใช้ผลิตภัณฑ์ล้างหน้า<b>ได้แค่บางยี่ห้อ</b> ส่วนผลิตภัณฑ์ชนิดอื่นๆเช่นโทนเนอร์ ครีม เอสเซน กันแดดเป็นต้น <b>ก็ต้องระมัดระวังเป็นพิเศษ</b> เพราะทำให้เกิดปัญหาเรื่องเรื่องคัน มีผื่นแดง ระคายเคืองได้ง่าย</p>
+        <p>ระดับที่ 4 ใช้ผลิตภัณฑ์ล้างหน้า<b>ได้แค่บางยี่ห้อ</b> ส่วนผลิตภัณฑ์ชนิดอื่นๆเช่นโทนเนอร์ ครีม เอสเซน กันแดดเป็นต้น<b>ใช้ไม่ได้เลย</b> เพราะเกิดปัญหาเรื่องคัน มีผื่นแดง ระคายเคืองตลอด</p>
+        <p>ระดับที่ 5 ไม่สามารถใช้อะไรได้เลย ใช้อะไรก็เกิดปัญหาเรื่องเรื่องคัน มีผื่นแดง ระคายเคืองตลอด</p>
+      </div>
+      <button class="btn" (click)="onClickNext()" >ยืนยัน</button>
+    </div>
+  </form>
 </mat-dialog-content>
