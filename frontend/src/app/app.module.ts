@@ -36,6 +36,7 @@ import {SkintypeQuestionComponent} from './skintype-question/skintype-question.c
 import {SkintypeQuestionDetailComponent} from './skintype-question-detail/skintype-question-detail.component';
 import {TenyearQuestionComponent} from './tenyear-question/tenyear-question.component';
 import { SkinProblemComponent } from './skin-problem/skin-problem.component';
+import { HistoryComponent } from './history/history.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -47,6 +48,7 @@ const appRoutes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'review/:id', component: ReviewPageComponent },
   { path: 'form/review', component: ReviewFormPageComponent },
+  { path: 'history', component: HistoryComponent }
 ]
 
 @NgModule({
@@ -68,7 +70,8 @@ const appRoutes: Routes = [
     SkintypeQuestionComponent,
     SkintypeQuestionDetailComponent,
     TenyearQuestionComponent,
-    SkinProblemComponent
+    SkinProblemComponent,
+    HistoryComponent
   ],
   imports: [
     BrowserModule,
