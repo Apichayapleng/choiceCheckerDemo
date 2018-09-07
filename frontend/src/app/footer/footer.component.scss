@@ -3,16 +3,21 @@
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: black;
+  background-color: #656667;
   color: white;
   text-align: center;
   font-size: 10px;
-  height: 180px;
+  height: 110px;
 }
 
 .btn-dark {
+  font-size: 8px;
   color: white;
-  border: white solid;
-  background-color: black;
-  border-radius: 1px;
+  border: white solid 0.8px;
+  background-color: #656667;
+  border-radius: 0.5px;
+}
+
+.form-size {
+  font-size: 10px;
 }
