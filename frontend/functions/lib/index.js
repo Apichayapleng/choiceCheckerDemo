@@ -7,88 +7,87 @@ Object.defineProperty(exports, "__esModule", { value: true });
 //  response.send("Hello from Firebase!");
 // });
 //# sourceMappingURL=index.js.map
-// const functions = require('firebase-functions');
-// const firebaseConfig = JSON.parse(process.env.FIREBASE_CONFIG);
-// const admin = require('firebase-admin');
-// admin.initializeApp(functions.config().firebaseConfig);
+const functions = require('firebase-functions');
+const firebaseConfig = JSON.parse(process.env.FIREBASE_CONFIG);
+const admin = require('firebase-admin');
+admin.initializeApp(functions.config().firebaseConfig);
 
-// const cors = require('cors')({origin: true});
-// const SENDGRID_API_KEY = functions.config().sendgrid.key;
+const cors = require('cors')({origin: true});
+const SENDGRID_API_KEY = functions.config().sendgrid.key;
 
-// const sgMail = require('@sendgrid/mail');
-// sgMail.setApiKey(SENDGRID_API_KEY);
-// sgMail.setSubstitutionWrappers('{{', '}}');
+const sgMail = require('@sendgrid/mail');
+sgMail.setApiKey(SENDGRID_API_KEY);
+sgMail.setSubstitutionWrappers('{{', '}}');
 
-// exports.httpEmail = functions.https.onRequest((req, res)=> {
-//     cors(req, res, () => {
-//         const message = {
-//             to: 'parata.momo@gmail.com',
-//             from: 'prot.p@ku.th',
-//             subject: 'Sendgrid',
-//             text: "Hello, World",
-//             html: "<h1>Hello, World</h1>"
-//         }
+exports.httpEmail = functions.https.onRequest((req, res)=> {
+    cors(req, res, () => {
+        const message = {
+            to: 'admins@choicechecker.net',
+            from: req.body.fromEmail,
+            subject: 'customers_problem',
+            text: req.body.text
+        }
 
-//         sgMail.send(message);
-//         res.status(200).send("email sent now");
-//     });
-//     // return Promise.resolve()
-//     //             .then(()=>{
-//     //                 if(req.method !== 'POST'){
-//     //                     const err = new Error("Only POST requests are accepted");
-//     //                     err.code = 405;
-//     //                     throw err;
-//     //                 }
+        sgMail.send(message);
+        res.status(200).send("email sent now");
+    });
+    // return Promise.resolve()
+    //             .then(()=>{
+    //                 if(req.method !== 'POST'){
+    //                     const err = new Error("Only POST requests are accepted");
+    //                     err.code = 405;
+    //                     throw err;
+    //                 }
 
                     
-//     //             })
-// });
+    //             })
+});
 
-const functions = require('firebase-functions');
-const admin = require('firebase-admin');
-admin.initializeApp();
-// const firebaseConfig = JSON.parse(process.env.FIREBASE_CONFIG);
-const sendgrid = require('sendgrid');
-const client = sendgrid(functions.config().sendgrid.key);
+// const functions = require('firebase-functions');
+// const admin = require('firebase-admin');
+// admin.initializeApp();
+// // const firebaseConfig = JSON.parse(process.env.FIREBASE_CONFIG);
+// const sendgrid = require('sendgrid');
+// const client = sendgrid(functions.config().sendgrid.key);
 
-function parseBody(body){
-    var helper = sendgrid.mail;
-    var fromEmail = new helper.Email(body.from);
-    var toEmail = new helper.Email(body.to);
-    var subject = body.subject;
-    var content = new helper.Content('text/html', body.content);
-    var mail = new helper.Mail(fromEmail, subject, toEmail, content);
-    return mail.toJSON();
-}
+// function parseBody(body){
+//     var helper = sendgrid.mail;
+//     var fromEmail = new helper.Email(body.from);
+//     var toEmail = new helper.Email(body.to);
+//     var subject = body.subject;
+//     var content = new helper.Content('text/html', body.content);
+//     var mail = new helper.Mail(fromEmail, subject, toEmail, content);
+//     return mail.toJSON();
+// }
 
-exports.httpEmail = functions.https.onRequest((req, res) => {
-    return Promise.resolve()
-        .then(() => {
-            if(req.method !== 'POST'){
-                const error = new Error('Only POST requests are accepted');
-                error.code = 405;
-                throw error;
-            }
+// exports.httpEmail = functions.https.onRequest((req, res) => {
+//     return Promise.resolve()
+//         .then(() => {
+//             if(req.method !== 'POST'){
+//                 const error = new Error('Only POST requests are accepted');
+//                 error.code = 405;
+//                 throw error;
+//             }
 
-            const request = client.emptyRequest({
-                method: 'POST',
-                path: 'v3/mail/send',
-                body: parseBody(req.body)
-            });
+//             const request = client.emptyRequest({
+//                 method: 'POST',
+//                 path: 'v3/mail/send',
+//                 body: parseBody(req.body)
+//             });
 
-            return client.API(request);
-        }).then((response)=>{
-            if(response.body){
-                res.send(response.body);
-            }
-            else{
-                res.end();
-            }
-        }).catch((err) => {
-            console.error(err);
-            return Promise.reject(err);
-        });
-})
+//             return client.API(request);
+//         }).then((response)=>{
+//             if(response.body){
+//                 res.send(response.body);
+//             }
+//             else{
+//                 res.end();
+//             }
+//         }).catch((err) => {
+//             console.error(err);
+//             return Promise.reject(err);
+//         });
+// })
 
 // const nodemailer = require('nodemailer');
 // const xoauth2 = require('xoauth2');

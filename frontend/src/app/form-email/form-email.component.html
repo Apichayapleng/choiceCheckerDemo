@@ -96,7 +96,7 @@
       </div>
     </div>
     <div *ngIf="type == 'body'">
-      <div class="form-control">
+      <div class="form-group">
         <label>8. น้ำหนัก และส่วนสูงของคุณ</label><br>
         <label for="weight">น้ำหนัก (กิโลกรัม)</label><input type="text" id="weight" name="weight" [(ngModel)]="weight" required><br>
         <label for="height">ส่วนสูง (เซนติเมตร)</label><input type="text" id="height" name="height" [(ngModel)]="height" required><br>
@@ -111,13 +111,13 @@
         </ul>
         <p>คำตอบ <span *ngFor="let food of foods">{{food}} </span></p>
       </div>
-      <div class="form-control">
+      <div class="form-group">
         <label for="dietaryFood">10. ปัจจุบันนี้คุณทานอาหารเสริมเพื่อดูแลรูปร่างอะไรอยู่</label><br>
         <input type="radio" id="checkDietaryFood" [(ngModel)]="checkDietaryFood" name="checkDietaryFood" value="true">มี<br>
         <textarea id="dietaryFood" [(ngModel)]="dietaryFood" name="dietaryFood" rows="4" cols="50" placeholder="กรุณากรอกรายละเอียด"></textarea><br>
         <input type="radio" id="checkDietaryFood" [(ngModel)]="checkDietaryFood" name="checkDietaryFood" value="false">ไม่มี
       </div>
-      <div class="form-control">
+      <div class="form-group">
         <label for="usedDietaryFood">11. อดีตคุณเคยทานอาหารเสริมเพื่อดูแลรูปร่างอะไรอยู่</label><br>
         <input type="radio" id="checkUsedDietaryFood" [(ngModel)]="checkUsedDietaryFood" name="checkUsedDietaryFood" value="true">มี<br>
         <textarea id="usedDietaryFood" [(ngModel)]="usedDietaryFood" name="tel" rows="4" cols="50" placeholder="กรุณากรอกรายละเอียด"></textarea><br>
