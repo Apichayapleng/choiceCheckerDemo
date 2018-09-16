@@ -23,7 +23,7 @@ exports.httpEmail = functions.https.onRequest((req, res)=> {
     cors(req, res, () => {
         const message = {
             to: 'admins@choicechecker.net',
-            from: req.body.fromEmail,
+            from: 'admins@choicechecker.net',
             subject: 'customers_problem',
             text: req.body.text
         }
