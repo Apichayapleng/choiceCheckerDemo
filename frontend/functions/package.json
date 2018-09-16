@@ -14,7 +14,8 @@
     "@sendgrid/mail": "^6.3.1",
     "cors": "^2.8.4",
     "firebase-admin": "~5.12.1",
-    "firebase-functions": "^1.0.3"
+    "firebase-functions": "^1.0.3",
+    "sendgrid": "^5.2.3"
   },
   "devDependencies": {
     "tslint": "^5.8.0",

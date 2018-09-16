@@ -37,6 +37,7 @@ import {SkintypeQuestionDetailComponent} from './skintype-question-detail/skinty
 import {TenyearQuestionComponent} from './tenyear-question/tenyear-question.component';
 import { SkinProblemComponent } from './skin-problem/skin-problem.component';
 import { HistoryComponent } from './history/history.component';
+import {HttpClientModule, HttpHeaders} from '@angular/common/http'; 
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -96,6 +97,7 @@ const appRoutes: Routes = [
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBwNGRf5eXUpzvi75ZZwYNzY8Ef74RS608'
     }),
+    HttpClientModule
   ],
   // providers: [],
   entryComponents: [
