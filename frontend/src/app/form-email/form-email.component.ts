@@ -83,9 +83,9 @@ export class FormEmailComponent implements OnInit {
       text: "test"
     };
 
-    return this.http.post(url, data, {responseType: 'text'}).subscribe();
-    // return this.http.post(url, params, options)
-    //         .pipe(catchError(this.handleError))
+    //return this.http.post(url, data, {responseType: 'text'}).subscribe();
+    return this.http.post(url, params, options)
+            .pipe(catchError(this.handleError));
   }
 
   private handleError(error: HttpErrorResponse) {
