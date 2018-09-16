@@ -1,13 +1,36 @@
-.pink{
+.container {
+  font-size: 15px;
+  font-weight: 300;
+  .header {
     color:#F06F7F;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .img-container {
+    height: 415px;
+    overflow-y: hidden;
+  }
+  .border-block {
+    border: 1px solid;
+    margin-bottom: 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .header {
+      font-size: 20px;
+      margin-left: -40px;
+    }
+    li {
+      padding-left: 20px;
+    }
+  }
+  b {
+    font-weight: 550;
+  }
 }
 
-.container{
-    background: url(../../assets/img/about-bg.jpg) repeat-y right top;
-    // background-size: ;
-    margin-right:0; 
-}
 
 .font-red{
-    color: red;
+  color: red;
 }

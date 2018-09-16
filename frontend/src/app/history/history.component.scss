@@ -1,13 +1,52 @@
-.pink{
+.container{
+  font-size: 16px;
+  font-weight: 300;
+  .header {
+    font-size: 25px;
     color:#F06F7F;
+    font-weight: 500;
+    margin-bottom: 30px;
+    margin-top: 20px;
+  }
+  .caption {
+    font-size: 18px;
+  }
+  .content {
+    text-align: left;
+    .highlight {
+      text-decoration: underline;
+      font-weight: 550;
+    }
+    b {
+      font-weight: 550;
+    }
+  }
+  .img-container {
+    height: 760px;
+    overflow: hidden;
+  }
+  .review-header {
+    font-size: 25px;
+    color: #F06F7F;
+    margin-bottom: 20px;
+    margin-top: 30px;
+  }
+  .product-container {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
-.container{
-    background: url(../../assets/img/about-bg.jpg) repeat-y right top;
-    // background-size: ;
-    margin-right:0; 
+.card {
+  border: 0;
+}
+
+.card-text-small {
+  font-size: 0.8vw;
+  text-align: center;
 }
 
 .font-red{
-    color: red;
+  color: red;
+  padding-right: 16px;
 }
