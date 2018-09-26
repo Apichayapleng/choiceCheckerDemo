@@ -37,7 +37,11 @@ import {SkintypeQuestionDetailComponent} from './skintype-question-detail/skinty
 import {TenyearQuestionComponent} from './tenyear-question/tenyear-question.component';
 import { SkinProblemComponent } from './skin-problem/skin-problem.component';
 import { HistoryComponent } from './history/history.component';
-import {HttpClientModule, HttpHeaders} from '@angular/common/http'; 
+import {HttpClientModule, HttpHeaders} from '@angular/common/http';
+
+import { YoutubeService } from './services/youtube.service';
+import { ReviewService } from './services/review.service';
+import { ProductService } from './services/product.service';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -99,7 +103,11 @@ const appRoutes: Routes = [
     }),
     HttpClientModule
   ],
-  // providers: [],
+  providers: [
+    YoutubeService,
+    ReviewService,
+    ProductService,
+  ],
   entryComponents: [
     AppComponent,
     ValidateModalComponent,

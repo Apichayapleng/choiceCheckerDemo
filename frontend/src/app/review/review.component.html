@@ -1,6 +1,6 @@
 <div>
   <div class="review-card">
-    <h2 class="review-header">{{review?.topic}}</h2>
+    <h2 class="review-header">{{review?.title}}</h2>
     <div [innerHTML]="bypassSecurity(review?.body)"></div>
     <div>
       <div class="footer-container">
@@ -22,7 +22,7 @@
           <b>{{comment?.name}}</b>
           <delete-button style="font-size: 14px !important;" (onDelete)="onDeleteComment(comment?.id)" ></delete-button>
         </div>
-        <p>{{comment?.body}}</p>
+        <p>{{comment?.comment}}</p>
       </div>
     </div>
     <form class="comment-form" [formGroup]="form">
