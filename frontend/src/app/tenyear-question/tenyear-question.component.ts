@@ -19,6 +19,8 @@ export class TenyearQuestionComponent implements OnInit {
   private QC: FormGroup;
   private QD: FormGroup;
 
+  warningText1: string;
+
   isResult: boolean = false;
   result: string;
 
@@ -72,6 +74,10 @@ export class TenyearQuestionComponent implements OnInit {
   }
 
   onNextBtn(){
+    if(this.foods.length != 4){
+      this.warningText1 = "อย่าลืมเลือกคำตอบให้ครบนะ";
+      return
+    }
     this.currentQuestion = this.foods[0];
     this.item = 1;
     

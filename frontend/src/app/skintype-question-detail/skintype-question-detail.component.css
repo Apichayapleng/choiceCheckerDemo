@@ -1,0 +1,26 @@
+.skintype-choise{
+    text-align: center;
+}
+.skintype-choise div{
+    display: inline-block;
+    margin: 10px;
+}
+
+.skintype-choise button{
+    width: 150px;
+    height: 150px;
+    border: 1px solid gray; 
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.bottom-dialog .left{
+    display: inline-block;
+    width: 20%;
+}
+
+.bottom-dialog .right{
+    display: inline-block;
+    width: 80%;
+    text-align: right;
+}

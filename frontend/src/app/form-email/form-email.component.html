@@ -1,5 +1,5 @@
-<h2 mat-dialog-title>มีปัญหาปรึกษานึกถึงเรา ChoiceChecker</h2>
-<h4>** จำเป็นต้องกรอก</h4>
+<h4 mat-dialog-title>มีปัญหาปรึกษานึกถึงเรา ChoiceChecker</h4>
+<h5>** จำเป็นต้องกรอก</h5>
 <mat-dialog-content>
   <form (ngSubmit)="onSubmit()">
     <div class="form-group">
@@ -41,7 +41,7 @@
     <div class="form-group">
       <label for="story">7. ChoiceChecker อยากทราบรายละเอียดเพิ่มเติมเล็กน้อย</label>
       <p>กรุณาเล่าเรื่องราวของคุณ ตัวอย่างเช่น ฉันเริ่มเป็นสิวตอนอายุ 14 ขวบ เลยไปอ่านรีวิวในพันทิปเขาแนะนำให้ใช้ดิฟฟารีนทาทิ้งไว้ทั้งคืน ช่วงนั้นสิวหาย แต่พอผ่านไปสักพักสิวก็กลับมาเป็นอีก แต่ครั้งนี้ไม่เหมือนเดิมเวลาจะใช้สกินแคร์อะไรก็ต้องระวังขึ้นเพราะหน้าแพ้ง่ายมาก</p>
-      <textarea id="story" name="story" [(ngModel)]="story" rows="4" cols="150" placeholder="กรุณากรอกเรื่องราวของคุณ (เท่าที่จำได้)"></textarea>
+      <textarea id="story" name="story" [(ngModel)]="story" rows="4" cols="50" placeholder="กรุณากรอกเรื่องราวของคุณ (เท่าที่จำได้)"></textarea>
     </div>
     <div class="form-group">
       <input type="radio" id="type" [(ngModel)]="type" name="type" value="face" required>ต้องการปรึกษาปัญหาเกี่ยวกับใบหน้า
@@ -136,6 +136,15 @@
         <textarea id="drugAllergiesDetail" [(ngModel)]="drugAllergiesDetail" name="drugAllergiesDetail" rows="4" cols="50" placeholder="ถ้าเคย อะไรบ้าง"></textarea><br>
       </div>
     </div>
-    <input type="submit" value="ส่งอีเมล">
+    
+    <div class="bottom-dialog">
+        <div class="left">
+            <input class="btn" type="submit" value="ส่งอีเมล">
+        </div>
+        <div class="right">
+            <p>อย่าลืมกรอกแบบฟอร์มให้ครบนะ<span><img src="../../assets/img/avatar06.png" height="100px"></span></p>
+            <a href="http://www.freepik.com">Designed by Freepik</a>
+        </div>
+    </div>
   </form>
 </mat-dialog-content>

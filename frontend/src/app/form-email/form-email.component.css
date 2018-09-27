@@ -1,0 +1,10 @@
+.bottom-dialog .left{
+    display: inline-block;
+    width: 20%;
+}
+
+.bottom-dialog .right{
+    display: inline-block;
+    width: 80%;
+    text-align: right;
+}

@@ -1,175 +1,278 @@
 <mat-dialog-content *ngIf="isResult == false">
   <div *ngIf="currentQuestion == null">
     <h2>อีก 10 ปีจะอ้วนแบบไหนมากที่สุด</h2>
-    <h3>1. อาหารไหนที่คุณโปรดปรานมากที่สุด เรียงลำดับจากมากไปน้อย</h3>
+    <h5>1. อาหารไหนที่คุณโปรดปรานมากที่สุด เรียงลำดับจากมากไปน้อย</h5>
     <div>
-      <div class="food-type" (click)="addFoodType('A')" style="border: 1px solid black; width: 250px; display: inline-block;">
-        <h3><b>A. ของหวาน เค้ก บิงซู ไอศกรีม</b></h3>
-        <h3>ใครชวนกิน ไม่เคยปฏิเสธ</h3>
+      <div class="food-type" (click)="addFoodType('A')" >
+        <p><b>A. ของหวาน เค้ก บิงซู ไอศกรีม</b></p>
+        <p class="desc">ใครชวนกิน ไม่เคยปฏิเสธ</p>
       </div>
-      <div class="food-type" (click)="addFoodType('B')" style="border: 1px solid black; width: 250px; display: inline-block;">
-        <h3><b>B. บะหมี่กึ่งสำเร็จรูป อาหารนอกบ้าน</b></h3>
-        <h3>สะดวก อร่อย ไม่ต้องเสียเวลา</h3>
+      <div class="food-type" (click)="addFoodType('B')" >
+        <p><b>B. บะหมี่กึ่งสำเร็จรูป อาหารนอกบ้าน</b></p>
+        <p class="desc">สะดวก อร่อย ไม่ต้องเสียเวลา</p>
       </div>
-      <div class="food-type" (click)="addFoodType('C')" style="border: 1px solid black; width: 250px; display: inline-block;">
-        <h3><b>C. เบียร์ วิสกี้ ค็อกเทล</b></h3>
-        <h3>เรื่องสังสรรค์ไว้ใจเราไม่เคยพลาด</h3>
+      <div class="food-type" (click)="addFoodType('C')" >
+        <p><b>C. เบียร์ วิสกี้ ค็อกเทล</b></p>
+        <p class="desc">เรื่องสังสรรค์ไว้ใจเราไม่เคยพลาด</p>
       </div>
-      <div class="food-type" (click)="addFoodType('D')" style="border: 1px solid black; width: 250px; display: inline-block;">
-        <h3><b>D. กล้วยทอด เฟรนฟรายด์ ลูกชิ้นทอด ไก่ทอด</b></h3>
-        <h3>พูดแล้วอู้ว..หู หยุดไม่ได้จริงๆ</h3>
+      <div class="food-type" (click)="addFoodType('D')" >
+        <p><b>D. กล้วยทอด เฟรนฟรายด์ ลูกชิ้นทอด ไก่ทอด</b></p>
+        <p class="desc">พูดแล้วอู้ว..หู หยุดไม่ได้จริงๆ</p>
       </div>
     </div>
     <div> 
-      <h3>คำตอบ <span *ngFor="let food of foods">{{food}} </span></h3>
-      <button (click)="onNextBtn()">ถัดไป</button>
+      <h5>คำตอบ <span *ngFor="let food of foods">{{food}} </span></h5>
+      
+    </div>
+    <div class="bottom-dialog">
+      <div class="left">
+        <button class="btn" (click)="onNextBtn()">ถัดไป</button>
+      </div>
+      <div class="right">
+        <p>{{warningText1}} <span><img src="../../assets/img/avatar08.png" height="100px"></span></p>
+        <a href="http://www.freepik.com">Designed by Freepik</a>
+      </div>
     </div>
   </div>
   <div *ngIf="currentQuestion != null">
       <div *ngIf="currentQuestion == 'A'">
-          <h2>แบบสอบถาม A</h2>
+          <h5>แบบสอบถาม A</h5>
           <form [formGroup]="QA" (ngSubmit)="onQASubmit()">
             <div class="form-control">
-              <label for="a1">เวลาเครียดทีไรทานของหวานเสมอ</label>
-              <input type="radio" name="a1" formControlName="a1" value="true" required> ใช่
-              <input type="radio" name="a1" formControlName="a1" value="false"> ไม่ใช่
+              <table>
+                <tr>
+                  <td class="question"><label for="a1">เวลาเครียดทีไรทานของหวานเสมอ</label></td>
+                  <td class="answer">
+                    <input type="radio" name="a1" formControlName="a1" value="true" required> ใช่
+                    <input type="radio" name="a1" formControlName="a1" value="false" required> ไม่ใช่
+                  </td>
+                </tr>
+                <tr>
+                  <td class="question"><label for="a2">เวลาทานข้าวมัก<b>เน้นข้าวหรือเส้นมากกว่า</b>ผักและเนื้อสัตว์</label></td>
+                  <td class="answer">
+                      <input type="radio" name="a2" formControlName="a2" value="true" required> ใช่
+                      <input type="radio" name="a2" formControlName="a2" value="false"> ไม่ใช่
+                  </td>
+                </tr>
+                <tr>
+                  <td class="question"><label for="a3">เมื่อถึงมื้ออาหาร ถ้าไม่ได้ทานข้าวหรือ เส้นด้วยจะไม่รู้สึกอิ่ม</label></td>
+                  <td class="answer">
+                      <input type="radio" name="a3" formControlName="a3" value="true" required> ใช่
+                      <input type="radio" name="a3" formControlName="a3" value="false"> ไม่ใช่
+                  </td>
+                </tr>
+                <tr>
+                  <td class="question"><label for="a4">ทานขนมปัง สปาเก็ตตี้ พิซซ่า ก๋วยเตี๋ยวเส้นใหญ่ อาหารที่มีแป้งเยอะเป็นชีวิตจิตใจ มากกว่า 3 ครั้งต่อสัปดาห์</label></td>
+                  <td class="answer">
+                      <input type="radio" name="a4" formControlName="a4" value="true" required> ใช่
+                      <input type="radio" name="a4" formControlName="a4" value="false"> ไม่ใช่
+                  </td>
+                </tr>
+                <tr>
+                  <td class="question"><label for="a5">ใช้เวลาไม่นานในการทานอาหารแต่ละมื้อ</label></td>
+                  <td class="answer">
+                      <input type="radio" name="a5" formControlName="a5" value="true" required> ใช่
+                      <input type="radio" name="a5" formControlName="a5" value="false"> ไม่ใช่
+                  </td>
+                </tr>
+                <tr>
+                  <td class="question"><label for="a6">ทานคาวแล้วต้องทานหวาน เป็นหลักที่ฉันยึดปฏิบัติสม่ำเสมอ</label></td>
+                  <td class="answer">
+                      <input type="radio" name="a6" formControlName="a6" value="true" required> ใช่
+                      <input type="radio" name="a6" formControlName="a6" value="false"> ไม่ใช่
+                  </td>
+                </tr>
+                <tr>
+                  <td class="question"><label for="a7">น้ำผลไม้ น้ำอัดลม ชานมเย็น เครื่องดื่มหวานๆ ดื่มบ่อยกว่าน้ำเปล่าเสียอีก</label></td>
+                  <td class="answer">
+                      <input type="radio" name="a7" formControlName="a7" value="true" required> ใช่
+                      <input type="radio" name="a7" formControlName="a7" value="false"> ไม่ใช่
+                  </td>
+                </tr>
+                <tr>
+                  <td class="question"><label for="a8">ทานขนมซองๆ ระหว่างทำงาน ดูทีวี หรือทำกิจกรรมต่างๆเป็นประจำ</label></td>
+                  <td class="answer">
+                      <input type="radio" name="a8" formControlName="a8" value="true" required> ใช่
+                      <input type="radio" name="a8" formControlName="a8" value="false"> ไม่ใช่
+                  </td>
+                </tr>
+              </table>
             </div>
-            <div class="form-control">
-              <label for="a2">เวลาทานข้าวมัก<b>เน้นข้าวหรือเส้นมากกว่า</b>ผักและเนื้อสัตว์</label>
-              <input type="radio" name="a2" formControlName="a2" value="true" required> ใช่
-              <input type="radio" name="a2" formControlName="a2" value="false"> ไม่ใช่
+            <div class="bottom-dialog">
+                <div class="left">
+                    <button class="btn" type="submit" >ถัดไป</button>
+                </div>
+                <div class="right">
+                    <p>อย่าลืมตอบแบบสอบถามให้ครบนะ<span><img src="../../assets/img/avatar08.png" height="100px"></span></p>
+                    <a href="http://www.freepik.com">Designed by Freepik</a>
+                </div>
             </div>
-            <div class="form-control">
-              <label for="a3">เมื่อถึงมื้ออาหาร ถ้าไม่ได้ทานข้าวหรือ เส้นด้วยจะไม่รู้สึกอิ่ม</label>
-              <input type="radio" name="a3" formControlName="a3" value="true" required> ใช่
-              <input type="radio" name="a3" formControlName="a3" value="false"> ไม่ใช่
-            </div>
-            <div class="form-control">
-              <label for="a4">ทานขนมปัง สปาเก็ตตี้ พิซซ่า ก๋วยเตี๋ยวเส้นใหญ่ อาหารที่มีแป้งเยอะเป็นชีวิตจิตใจ มากกว่า 3 ครั้งต่อสัปดาห์</label>
-              <input type="radio" name="a4" formControlName="a4" value="true" required> ใช่
-              <input type="radio" name="a4" formControlName="a4" value="false"> ไม่ใช่
-            </div>
-            <div class="form-control">
-              <label for="a5">ใช้เวลาไม่นานในการทานอาหารแต่ละมื้อ</label>
-              <input type="radio" name="a5" formControlName="a5" value="true" required> ใช่
-              <input type="radio" name="a5" formControlName="a5" value="false"> ไม่ใช่
-            </div>
-            <div class="form-control">
-              <label for="a6">ทานคาวแล้วต้องทานหวาน เป็นหลักที่ฉันยึดปฏิบัติสม่ำเสมอ</label>
-              <input type="radio" name="a6" formControlName="a6" value="true" required> ใช่
-              <input type="radio" name="a6" formControlName="a6" value="false"> ไม่ใช่
-            </div>
-            <div class="form-control">
-              <label for="a7">น้ำผลไม้ น้ำอัดลม ชานมเย็น เครื่องดื่มหวานๆ ดื่มบ่อยกว่าน้ำเปล่าเสียอีก</label>
-              <input type="radio" name="a7" formControlName="a7" value="true" required> ใช่
-              <input type="radio" name="a7" formControlName="a7" value="false"> ไม่ใช่
-            </div>
-            <div class="form-control">
-              <label for="a8">ทานขนมซองๆ ระหว่างทำงาน ดูทีวี หรือทำกิจกรรมต่างๆเป็นประจำ</label>
-              <input type="radio" name="a8" formControlName="a8" value="true" required> ใช่
-              <input type="radio" name="a8" formControlName="a8" value="false"> ไม่ใช่
-            </div>
-            <button type="submit" >ถัดไป</button>
           </form>
         </div>
         <div *ngIf="currentQuestion == 'B'">
-          <h2>แบบสอบถาม B</h2>
+          <h5>แบบสอบถาม B</h5>
           <form [formGroup]="QB" (ngSubmit)="onQBSubmit()">
             <div class="form-control">
-              <label for="b1">ทานอาหารนอกบ้านเป็นประจำสม่ำเสมอ มากกว่า 2 ครั้งต่อ 1 สัปดาห์</label>
-              <input type="radio" name="b1"  formControlName="b1" value="true" required> ใช่
-              <input type="radio" name="b1"  formControlName="b1" value="false"> ไม่ใช่
+              <table>
+                <tr>
+                  <td class="question"><label for="b1">ทานอาหารนอกบ้านเป็นประจำสม่ำเสมอ มากกว่า 2 ครั้งต่อ 1 สัปดาห์</label></td>
+                  <td class="answer">
+                    <input type="radio" name="b1"  formControlName="b1" value="true" required> ใช่
+                    <input type="radio" name="b1"  formControlName="b1" value="false"> ไม่ใช่
+                  </td>
+                </tr>
+                <tr>
+                  <td class="question"><label for="b2">ชอบรับประทานอาหารรสชาติเข้มข้น จัดจ้าน</label></td>
+                  <td class="answer">
+                      <input type="radio" name="b2" formControlName="b2" value="true" required> ใช่
+                      <input type="radio" name="b2" formControlName="b2" value="false"> ไม่ใช่
+                  </td>
+                </tr>
+                <tr>
+                  <td class="question"><label for="b3">ทานบะหมี่กึ่งสำเร็จรูป โจ๊กคัพ ข้าวกล่องตามร้านสะดวกซื้อมากกว่า 3 ครั้งต่อสัปดาห์</label></td>
+                  <td class="answer">
+                      <input type="radio" name="b3" formControlName="b3" value="true" required> ใช่
+                      <input type="radio" name="b3" formControlName="b3" value="false"> ไม่ใช่
+                  </td>
+                </tr>
+                <tr>
+                  <td class="question"><label for="b4">ทานขนมซองๆ ระหว่างทำงาน ดูทีวี หรือทำกิจกรรมต่างๆเป็นประจำ</label></td>
+                  <td class="answer">
+                      <input type="radio" name="b4" formControlName="b4" value="true" required> ใช่
+                      <input type="radio" name="b4" formControlName="b4" value="false"> ไม่ใช่
+                  </td>
+                </tr>
+                <tr>
+                  <td class="question"><label for="b5">เวลาทานข้าวทุกมื้อแทบขาดพริกน้ำปลา ซีอิ๊วขาวไม่ได้เลย</label></td>
+                  <td class="answer">
+                      <input type="radio" name="b5" formControlName="b5" value="true" required> ใช่
+                      <input type="radio" name="b5" formControlName="b5" value="false"> ไม่ใช่
+                  </td>
+                </tr>
+              </table>
             </div>
-            <div class="form-control">
-              <label for="b2">ชอบรับประทานอาหารรสชาติเข้มข้น จัดจ้าน</label>
-              <input type="radio" name="b2" formControlName="b2" value="true" required> ใช่
-              <input type="radio" name="b2" formControlName="b2" value="false"> ไม่ใช่
+            <div class="bottom-dialog">
+                <div class="left">
+                    <button class="btn" type="submit" >ถัดไป</button>
+                </div>
+                <div class="right" style="text-align: right">
+                  <p>อย่าลืมตอบแบบสอบถามให้ครบนะ <span><img src="../../assets/img/avatar08.png" height="100px"></span></p>
+                  <a href="http://www.freepik.com">Designed by Freepik</a>
+                </div>
             </div>
-            <div class="form-control">
-              <label for="b3">ทานบะหมี่กึ่งสำเร็จรูป โจ๊กคัพ ข้าวกล่องตามร้านสะดวกซื้อมากกว่า 3 ครั้งต่อสัปดาห์</label>
-              <input type="radio" name="b3" formControlName="b3" value="true" required> ใช่
-              <input type="radio" name="b3" formControlName="b3" value="false"> ไม่ใช่
-            </div>
-            <div class="form-control">
-              <label for="b4">ทานขนมซองๆ ระหว่างทำงาน ดูทีวี หรือทำกิจกรรมต่างๆเป็นประจำ</label>
-              <input type="radio" name="b4" formControlName="b4" value="true" required> ใช่
-              <input type="radio" name="b4" formControlName="b4" value="false"> ไม่ใช่
-            </div>
-            <div class="form-control">
-              <label for="b5">เวลาทานข้าวทุกมื้อแทบขาดพริกน้ำปลา ซีอิ๊วขาวไม่ได้เลย</label>
-              <input type="radio" name="b5" formControlName="b5" value="true" required> ใช่
-              <input type="radio" name="b5" formControlName="b5" value="false"> ไม่ใช่
-            </div>
-            <button type="submit" >ถัดไป</button>
           </form>
         </div>
         <div *ngIf="currentQuestion == 'C'">
-          <h2>แบบสอบถาม C</h2>
+          <h5>แบบสอบถาม C</h5>
           <form [formGroup]="QC" (ngSubmit)="onQCSubmit()">
             <div class="form-control">
-              <label for="c1">ดื่มแอลกอฮอล์มากกว่า 3 กระป๋อง แก้วหรือขวดต่อ 1 สัปดาห์</label>
-              <input type="radio" name="c1" formControlName="c1" value="true" required> ใช่
-              <input type="radio" name="c1" formControlName="c1" value="false"> ไม่ใช่
+              <table>
+                <tr>
+                  <td class="question"><label for="c1">ดื่มแอลกอฮอล์มากกว่า 3 กระป๋อง แก้วหรือขวดต่อ 1 สัปดาห์</label></td>
+                  <td class="answer">
+                      <input type="radio" name="c1" formControlName="c1" value="true" required> ใช่
+                      <input type="radio" name="c1" formControlName="c1" value="false"> ไม่ใช่
+                  </td>
+                </tr>
+                <tr>
+                  <td class="question"><label for="c2">ดื่มแอลกอฮอล์ทุกวัน หรือเกือบทุกวัน ได้โอกาสนิดหน่อยก็เอา มากกว่า 4 ครั้งต่อสัปดาห์</label></td>
+                  <td class="answer">
+                      <input type="radio" name="c2" formControlName="c2" value="true" required> ใช่
+                      <input type="radio" name="c2" formControlName="c2" value="false"> ไม่ใช่
+                  </td>
+                </tr>
+                <tr>
+                  <td class="question"><label for="c3">ดื่มแอลกอฮอล์ไปด้วยกับแกล้มไปด้วย</label></td>
+                  <td class="answer">
+                      <input type="radio" name="c3" formControlName="c3" value="true" required> ใช่
+                      <input type="radio" name="c3" formControlName="c3" value="false"> ไม่ใช่
+                  </td>
+                </tr>
+                <tr>
+                  <td class="question"><label for="c4">กับแกล้มมักจะเป็นของทอด ไม่ก็อาหารที่มีมันติดอยู่</label></td>
+                  <td class="answer">
+                      <input type="radio" name="c4" formControlName="c4" value="true" required> ใช่
+                      <input type="radio" name="c4" formControlName="c4" value="false"> ไม่ใช่
+                  </td>
+                </tr>
+                <tr>
+                  <td class="question"><label for="c5">ถ้าได้แอลกอฮอล์เข้าปากแล้ว แทบไม่ดื่มน้ำเปล่าในครั้งนั้นๆเลย</label></td>
+                  <td class="answer">
+                      <input type="radio" name="c5" formControlName="c5" value="true" required> ใช่
+                      <input type="radio" name="c5" formControlName="c5" value="false"> ไม่ใช่
+                  </td>
+                </tr>
+              </table>
             </div>
-            <div class="form-control">
-              <label for="c2">ดื่มแอลกอฮอล์ทุกวัน หรือเกือบทุกวัน ได้โอกาสนิดหน่อยก็เอา มากกว่า 4 ครั้งต่อสัปดาห์</label>
-              <input type="radio" name="c2" formControlName="c2" value="true" required> ใช่
-              <input type="radio" name="c2" formControlName="c2" value="false"> ไม่ใช่
+            <div class="bottom-dialog">
+                <div class="left">
+                    <button class="btn" type="submit" >ถัดไป</button>
+                </div>
+                <div class="right">
+                    <p>อย่าลืมตอบแบบสอบถามให้ครบนะ<span><img src="../../assets/img/avatar08.png" height="100px"></span></p>
+                    <a href="http://www.freepik.com">Designed by Freepik</a>
+                </div>
             </div>
-            <div class="form-control">
-              <label for="c3">ดื่มแอลกอฮอล์ไปด้วยกับแกล้มไปด้วย</label>
-              <input type="radio" name="c3" formControlName="c3" value="true" required> ใช่
-              <input type="radio" name="c3" formControlName="c3" value="false"> ไม่ใช่
-            </div>
-            <div class="form-control">
-              <label for="c4">กับแกล้มมักจะเป็นของทอด ไม่ก็อาหารที่มีมันติดอยู่</label>
-              <input type="radio" name="c4" formControlName="c4" value="true" required> ใช่
-              <input type="radio" name="c4" formControlName="c4" value="false"> ไม่ใช่
-            </div>
-            <div class="form-control">
-              <label for="c5">ถ้าได้แอลกอฮอล์เข้าปากแล้ว แทบไม่ดื่มน้ำเปล่าในครั้งนั้นๆเลย</label>
-              <input type="radio" name="c5" formControlName="c5" value="true" required> ใช่
-              <input type="radio" name="c5" formControlName="c5" value="false"> ไม่ใช่
-            </div>
-            <button type="submit" >ถัดไป</button>
           </form>
         </div>
         <div *ngIf="currentQuestion == 'D'">
-          <h2>แบบสอบถาม D</h2>
+          <h5>แบบสอบถาม D</h5>
           <form [formGroup]="QD" (ngSubmit)="onQDSubmit()">
             <div class="form-control">
-              <label for="d1">ทานขนมปังทีไร ทาเนยเยอะๆ กินโกโก้ นมปั่นก็ขอใส่วิปครีมเยอะๆ</label>
-              <input type="radio" name="d1" formControlName="d1" value="true" required> ใช่
-              <input type="radio" name="d1" formControlName="d1" value="false"> ไม่ใช่
+              <table>
+                <tr>
+                  <td class="question"><label for="d1">ทานขนมปังทีไร ทาเนยเยอะๆ กินโกโก้ นมปั่นก็ขอใส่วิปครีมเยอะๆ</label></td>
+                  <td class="answer">
+                      <input type="radio" name="d1" formControlName="d1" value="true" required> ใช่
+                      <input type="radio" name="d1" formControlName="d1" value="false"> ไม่ใช่
+                  </td>
+                </tr>
+                <tr>
+                  <td class="question"><label for="d2">กล้วยทอด เฟรนฟราย ไก่ทอด หมูทอด มันหมู หรือของทอดชนิดอื่นๆ ทานมากกว่า 3 ครั้งต่อสัปดาห์</label></td>
+                  <td class="answer">
+                      <input type="radio" name="d2" formControlName="d2" value="true" required> ใช่
+                      <input type="radio" name="d2" formControlName="d2" value="false"> ไม่ใช่
+                  </td>
+                </tr>
+                <tr>
+                  <td class="question"><label for="d3">ชอบทานเนื้อหมู ไก่ วัวมากกว่าอาหารทะเลหรือปลา</label></td>
+                  <td class="answer">
+                      <input type="radio" name="d3" formControlName="d3" value="true" required> ใช่
+                      <input type="radio" name="d3" formControlName="d3" value="false"> ไม่ใช่
+                  </td>
+                </tr>
+                <tr>
+                  <td class="question"><label for="d4">ทานขนมซอง ขนมขบเคี้ยว มากกว่า 1 ครั้งต่อสัปดาห์</label></td>
+                  <td class="answer">
+                      <input type="radio" name="d4" formControlName="d4" value="true" required> ใช่
+                      <input type="radio" name="d4" formControlName="d4" value="false"> ไม่ใช่
+                  </td>
+                </tr>
+                <tr>
+                  <td class="question"><label for="d5">ไม่ค่อยทานผักหรือผลไม้เท่าไหร่</label></td>
+                  <td class="answer">
+                      <input type="radio" name="d5" formControlName="d5" value="true" required> ใช่
+                      <input type="radio" name="d5" formControlName="d5" value="false"> ไม่ใช่
+                  </td>
+                </tr>
+              </table>
             </div>
-            <div class="form-control">
-              <label for="d2">กล้วยทอด เฟรนฟราย ไก่ทอด หมูทอด มันหมู หรือของทอดชนิดอื่นๆ ทานมากกว่า 3 ครั้งต่อสัปดาห์</label>
-              <input type="radio" name="d2" formControlName="d2" value="true" required> ใช่
-              <input type="radio" name="d2" formControlName="d2" value="false"> ไม่ใช่
+            <div class="bottom-dialog">
+                <div class="left">
+                    <button class="btn" type="submit" >ถัดไป</button>
+                </div>
+                <div class="right">
+                    <p>อย่าลืมตอบแบบสอบถามให้ครบนะ<span><img src="../../assets/img/avatar08.png" height="100px"></span></p>
+                    <a href="http://www.freepik.com">Designed by Freepik</a>
+                </div>
             </div>
-            <div class="form-control">
-              <label for="d3">ชอบทานเนื้อหมู ไก่ วัวมากกว่าอาหารทะเลหรือปลา</label>
-              <input type="radio" name="d3" formControlName="d3" value="true" required> ใช่
-              <input type="radio" name="d3" formControlName="d3" value="false"> ไม่ใช่
-            </div>
-            <div class="form-control">
-              <label for="d4">ทานขนมซอง ขนมขบเคี้ยว มากกว่า 1 ครั้งต่อสัปดาห์</label>
-              <input type="radio" name="d4" formControlName="d4" value="true" required> ใช่
-              <input type="radio" name="d4" formControlName="d4" value="false"> ไม่ใช่
-            </div>
-            <div class="form-control">
-              <label for="d5">ไม่ค่อยทานผักหรือผลไม้เท่าไหร่</label>
-              <input type="radio" name="d5" formControlName="d5" value="true" required> ใช่
-              <input type="radio" name="d5" formControlName="d5" value="false"> ไม่ใช่
-            </div>
-            <button type="submit" >ถัดไป</button>
           </form>
         </div>
   </div>
 </mat-dialog-content>
 <mat-dialog-content *ngIf="isResult">
     <div *ngIf="result == '1'">
-        <h3>คุณกำลังจะอ้วนแบบ “แบบตุ่ม” ใหญ่ทั้งส่วนบนและส่วนล่าง</h3>
+        <h5>คุณกำลังจะอ้วนแบบ “แบบตุ่ม” ใหญ่ทั้งส่วนบนและส่วนล่าง</h5>
         <p>สาเหตุ <b>เกิดจากรับประทานน้ำตาลหรือคาร์โบไฮเดรตมากเกินไป</b>
           เมื่อเข้าสู่ร่างกายแล้วก็จะย่อยตัวกลายเป็นน้ำตาล คุณสมบัติอย่างหนึ่งที่สำคัญของน้ำตาลนั้นคือชอบดูดน้ำ
           จึงทำให้ร่างกายดูบวมทั้งส่วนบน ส่วนล่าง
@@ -204,7 +307,7 @@
         <p>ผลิตภัณฑ์แนะนำสำหรับคุณ</p>
       </div>
       <div *ngIf="result == '2'">
-        <h3>คุณกำลังจะอ้วนแบบ “แบบกะละมัง” ใหญ่แต่ส่วนล่าง</h3>
+        <h5>คุณกำลังจะอ้วนแบบ “แบบกะละมัง” ใหญ่แต่ส่วนล่าง</h5>
         <p>สาเหตุ เกิดจากทานเกลือหรือผงชูรสมากเกินไป
           ร่างกายจึงจำเป็นต้องกักน้ำเพื่อเจือจางปริมาณเกลือในร่างกาย
           นอกจากนั้นยังเกี่ยวเนื่องไปถึงประสิทธิภาพการทำงานของระบบเผาผลาญในร่างกายที่แย่ลง
@@ -241,7 +344,7 @@
         <p>ผลิตภัณฑ์แนะนำสำหรับคุณ</p>
       </div>
       <div *ngIf="result == '3'">
-        <h3>คุณกำลังจะอ้วน “แบบพุงย้อย” ใหญ่เฉพาะส่วนพุง</h3>
+        <h5>คุณกำลังจะอ้วน “แบบพุงย้อย” ใหญ่เฉพาะส่วนพุง</h5>
         <p>สาเหตุ เกิดจากการดื่มแอลกอฮอล์มาเกินไป ทำให้อาหารที่ทานเข้าไปโดยเฉพาะแป้ง น้ำตาล
           ไขมันย่อยสลายยากขึ้น ไม่ถูกนำไปใช้ จึงสะสมอยู่ภายในร่างกาย นอกจากนั้นพวกกับแกล้ม ของทอด
           เนื้อติดมัน ที่มักกินร่วมกัน มีสารอาหารน้อย แถมยังไปเพิ่มให้ไขมันภายในร่างกายสูงขึ้นอีกด้วย
@@ -275,7 +378,7 @@
         <p>ผลิตภัณฑ์แนะนำสำหรับคุณ</p>
       </div>
       <div *ngIf="result == '4'">
-        <h3>คุณกำลังจะอ้วน “แบบจานดาวเทียม” ใหญ่เฉพาะส่วนล่าง</h3>
+        <h5>คุณกำลังจะอ้วน “แบบจานดาวเทียม” ใหญ่เฉพาะส่วนล่าง</h5>
         <p>สาเหตุ เกิดจากการทานอาหารจำพวกไขมันมากเกินไป ไม่ถูกนำไปใช้จึงสะสมตามส่วนต่างๆของร่างกาย
           ยิ่งอายุเยอะประสิทธิภาพในการเผาผลาญไขมันก็ลดลง
         </p>
@@ -307,10 +410,14 @@
         <p>ผลิตภัณฑ์แนะนำสำหรับคุณ</p>
       </div>
       <div *ngIf="result == '5'">
-        <h3>อีก ปี 10
-          คุณก็ยังคงสวยหุ่นดีเหมือนเดิม</h3>
+        <div style="text-align: center;">
+          <h5>อีก ปี 10
+            คุณก็ยังคงสวยหุ่นดีเหมือนเดิม
+            <span><img src="../../assets/img/avatar08.png" height="100px"></span>
+          </h5>
+        </div>
       </div>
       <div>
-        <button (click)="closeDialog()">close</button>
+        <button class="btn" (click)="closeDialog()">close</button>
       </div>
 </mat-dialog-content>
