@@ -8,6 +8,7 @@ export class YoutubeService {
   constructor(private apiService: ApiService) {}
 
   find(params = {}) {
+    console.log('hello')
     return this.apiService.get(
       `${this.baseurl}?${this.getParams(params)}`,
     );

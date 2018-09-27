@@ -6,6 +6,7 @@ import {SkintypeQuestionComponent} from '../skintype-question/skintype-question.
 import {FormEmailComponent} from '../form-email/form-email.component';
 import {SkinProblemComponent} from '../skin-problem/skin-problem.component';
 import {YoutubeService} from '../services/youtube.service';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -31,20 +32,27 @@ export class HomeComponent implements OnInit, OnDestroy {
   //     embed: '<div style="position: relative; height: 0; padding-bottom: 56.25%"><iframe width="560" height="315" src="https://www.youtube.com/embed/IMEE1_zhfhs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>'
   //   }
   // ];
-  youtubeLike1;
-  youtubeLike2;
-  youtubeLike3;
+  youtubeLink1;
+  youtubeLink2;
+  youtubeLink3;
   youtubeSub: Subscription;
+  loading: boolean
 
-  constructor(public matDialog: MatDialog, private youtubeService: YoutubeService) {
+  constructor(public matDialog: MatDialog, private youtubeService: YoutubeService, public sanitizer: DomSanitizer) {
+    this.loading = true;
     this.youtubeSub = youtubeService.find().subscribe(
       (data) => {
         const [y1, y2, y3] = data;
-        this.youtubeLike1 = y1;
-        this.youtubeLike2 = y2;
-        this.youtubeLike3 = y3;
+        this.youtubeLink1 = this.getYoutubeLink(y1.url);
+        this.youtubeLink2 = this.getYoutubeLink(y2.url);
+        this.youtubeLink3 = this.getYoutubeLink(y3.url);
+        this.loading = false;
+      },
+      (err) => {
+        console.log(err);
       }
     );
+    // this.youtubeList = youtubeService.find();
   }
 
   ngOnInit() {
@@ -52,6 +60,10 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.youtubeSub.unsubscribe();
+  }
+
+  getYoutubeLink(link) {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(link);
   }
 
   onClickTenYear(){

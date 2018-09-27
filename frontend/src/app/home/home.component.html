@@ -169,7 +169,7 @@
     </carousel>
   </div>
 
-  <div class="card-deck" style="padding-top: 30px">
+  <div class="card-deck" style="padding-top: 30px" *ngIf="!loading">
     <div class="card" style="background-color: white">
       <!--<img src="../assets/img/3.jpg" alt="first slide" style="display: block; width: 100%;">-->
       <div class="card-body text-center">
@@ -179,7 +179,8 @@
           allowfullscreen></iframe> -->
           <!-- <iframe style="width:100%; height:auto;" src="https://www.youtube.com/embed/IMEE1_zhfhs" frameborder="0" allow="autoplay; encrypted-media"
           allowfullscreen></iframe> -->
-          <img src="../assets/img/6.jpg" alt="first slide" style="display: block; width: 100%;">
+          <iframe width="340" height="300" [src]="youtubeLink1" frameborder="0" allow="autoplay; encrypted-media"
+                  allowfullscreen></iframe>
         </div>
         <h5 class="card-title">Card title</h5>
         <p class="card-text">This is a longer card with supporting </p>

@@ -42,6 +42,7 @@ import {HttpClientModule, HttpHeaders} from '@angular/common/http';
 import { YoutubeService } from './services/youtube.service';
 import { ReviewService } from './services/review.service';
 import { ProductService } from './services/product.service';
+import {ApiService} from './services/api.service';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -107,6 +108,7 @@ const appRoutes: Routes = [
     YoutubeService,
     ReviewService,
     ProductService,
+    ApiService,
   ],
   entryComponents: [
     AppComponent,
