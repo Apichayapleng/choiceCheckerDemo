@@ -34,10 +34,15 @@ export class ReviewService {
       comment,
     );
   }
+  delecteComment(reviewId, commentId) {
+    return this.apiService.delete(
+      `${this.baseurl}/${reviewId}/comment/${commentId}`,
+    );
+  }
 
   getParams(params) {
     return Object.keys(params).reduce(
-      (key, currentValue) => `${currentValue}&${key}=${params[key]}`,
+      (currentValue, key) => `${currentValue}&${key}=${params[key]}`,
       '',
     );
   }

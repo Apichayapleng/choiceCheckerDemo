@@ -16,7 +16,7 @@ export class YoutubeService {
 
   getParams(params) {
     return Object.keys(params).reduce(
-      (key, currentValue) => `${currentValue}&${key}=${params[key]}`,
+      (currentValue, key) => `${currentValue}&${key}=${params[key]}`,
       '',
     );
   }

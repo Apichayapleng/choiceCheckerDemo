@@ -34,9 +34,8 @@ export class ReviewPageComponent implements OnInit, OnDestroy {
   constructor(private sanitizer: DomSanitizer,  private formBuilder: FormBuilder, private route: ActivatedRoute,
               private reviewService: ReviewService) {
     this.sub = this.route.params.subscribe(params => {
-      const id = +params['id'];
+      const id = params['id'];
       // api get review by id
-      console.log('api get review by id:' + id)
       this.reviewSub = this.reviewService.get(id).subscribe(
         (data) => {
           this.review = data;
@@ -59,8 +58,9 @@ export class ReviewPageComponent implements OnInit, OnDestroy {
   }
 
   onLike() {
-    this.review.like += 1;
+    this.review.like += 1
     //api like review
+    this.reviewService.like(this.review.id, this.review.like).subscribe();
     console.log('api like review')
   }
 
@@ -72,12 +72,14 @@ export class ReviewPageComponent implements OnInit, OnDestroy {
   onDeleteComment(id) {
     this.review.comments = this.review.comments.filter((comment) => comment.id !== id);
     // api delete comment
+    this.reviewService.delecteComment(this.review.id, id);
     console.log('api delete comment')
   }
 
   onAddComment() {
     const comment = this.form.value
     // api add comment
+    this.reviewService.createComment(this.review.id, comment);
     console.log('api add comment')
   }
 

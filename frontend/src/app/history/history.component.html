@@ -24,35 +24,34 @@
       <h3 class="review-header">User Review</h3>
     </div>
     <div class="col-12 card-deck">
-      <div class="card">
-        <a routerLink="/review/:id">
-          <img src="../assets/img/5.jpg" alt="first slide" style="display: block; width: 100%;">
+      <div class="card" *ngFor="let review of userReviews | async">
+        <a [routerLink]="'/review/'+review.id">
+          <img [src]="review.thumbnail" alt="first slide" style="display: block; width: 100%;">
         </a>
         <div class="card-body" style="background-color: white">
           <!-- <h5 class="card-title">Card title</h5> -->
-          <p class="card-text-small">This is a longer card with supporting text below as a natural lead-in to additional
-          </p>
+          <p class="card-text-small">{{review.title}}</p>
         </div>
       </div>
-      <div class="card">
-        <a routerLink="/review/:id">
-          <img src="../assets/img/5.jpg" alt="first slide" style="display: block; width: 100%;">
-        </a>
-        <div class="card-body" style="background-color: white">
-          <!-- <h5 class="card-title">Card title</h5> -->
-          <p class="card-text-small">This card has supporting text below as a natural lead-in to additional content.</p>
-        </div>
-      </div>
-      <div class="card">
-        <a routerLink="/review/:id">
-          <img src="../assets/img/5.jpg" alt="first slide" style="display: block; width: 100%;">
-        </a>
-        <div class="card-body" style="background-color: white">
-          <!-- <h5 class="card-title">Card title</h5> -->
-          <p class="card-text-small">This is a wider card with supporting text below as a natural lead-in to additional
-          </p>
-        </div>
-      </div>
+      <!--<div class="card">-->
+        <!--<a routerLink="/review/:id">-->
+          <!--<img src="../assets/img/5.jpg" alt="first slide" style="display: block; width: 100%;">-->
+        <!--</a>-->
+        <!--<div class="card-body" style="background-color: white">-->
+          <!--&lt;!&ndash; <h5 class="card-title">Card title</h5> &ndash;&gt;-->
+          <!--<p class="card-text-small">This card has supporting text below as a natural lead-in to additional content.</p>-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--<div class="card">-->
+        <!--<a routerLink="/review/:id">-->
+          <!--<img src="../assets/img/5.jpg" alt="first slide" style="display: block; width: 100%;">-->
+        <!--</a>-->
+        <!--<div class="card-body" style="background-color: white">-->
+          <!--&lt;!&ndash; <h5 class="card-title">Card title</h5> &ndash;&gt;-->
+          <!--<p class="card-text-small">This is a wider card with supporting text below as a natural lead-in to additional-->
+          <!--</p>-->
+        <!--</div>-->
+      <!--</div>-->
     </div>
   </div>
 </div>

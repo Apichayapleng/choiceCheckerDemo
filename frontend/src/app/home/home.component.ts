@@ -7,6 +7,8 @@ import {FormEmailComponent} from '../form-email/form-email.component';
 import {SkinProblemComponent} from '../skin-problem/skin-problem.component';
 import {YoutubeService} from '../services/youtube.service';
 import { DomSanitizer } from '@angular/platform-browser';
+import { ReviewService } from '../services/review.service';
+import {ProductService} from '../services/product.service';
 
 @Component({
   selector: 'app-home',
@@ -14,31 +16,21 @@ import { DomSanitizer } from '@angular/platform-browser';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit, OnDestroy {
-
-  // videoList = [
-  //   {
-  //    name: 'item 1',
-  //    slug: 'item-1',
-  //     embed: '<div style="position: relative; height: 0; padding-bottom: 56.25%"><iframe width="560" height="315" src="https://www.youtube.com/embed/IMEE1_zhfhs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>'
-  //   },
-  //   {
-  //     name: 'item 2',
-  //     slug: 'item-2',
-  //     embed: '<div style="position: relative; height: 0; padding-bottom: 56.25%"><iframe width="560" height="315" src="https://www.youtube.com/embed/IMEE1_zhfhs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>'
-  //   },
-  //   {
-  //     name: 'item 3',
-  //     slug: 'item-3',
-  //     embed: '<div style="position: relative; height: 0; padding-bottom: 56.25%"><iframe width="560" height="315" src="https://www.youtube.com/embed/IMEE1_zhfhs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>'
-  //   }
-  // ];
   youtubeLink1;
   youtubeLink2;
   youtubeLink3;
   youtubeSub: Subscription;
+  reviewSub: Subscription;
+  productSub: Subscription;
   loading: boolean
+  reviews1;
+  reviews2;
+  product1;
+  product2;
 
-  constructor(public matDialog: MatDialog, private youtubeService: YoutubeService, public sanitizer: DomSanitizer) {
+  constructor(public matDialog: MatDialog, private youtubeService: YoutubeService,
+              public sanitizer: DomSanitizer, private reviewService: ReviewService,
+              private productService: ProductService) {
     this.loading = true;
     this.youtubeSub = youtubeService.find().subscribe(
       (data) => {
@@ -52,7 +44,24 @@ export class HomeComponent implements OnInit, OnDestroy {
         console.log(err);
       }
     );
-    // this.youtubeList = youtubeService.find();
+    this.reviewSub = this.reviewService.find({ type: 'ADMIN', sortBy: 'title' }).subscribe(
+      (data) => {
+        this.reviews1 = data.slice(0, 3);
+        this.reviews2 = data.slice(3, 7);
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
+    this.productSub = this.productService.find({ sortBy: 'title' }).subscribe(
+      (data) => {
+        this.product1 = data.slice(0, 3);
+        this.product2 = data.slice(3, 6);
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
   }
 
   ngOnInit() {
@@ -60,6 +69,8 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.youtubeSub.unsubscribe();
+    this.reviewSub.unsubscribe();
+    this.productSub.unsubscribe();
   }
 
   getYoutubeLink(link) {
